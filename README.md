@@ -3,6 +3,8 @@
 Common ROS packages for the UpDroid UP1-Series, useable for both simulation and
 real robot operation.
 
+## Packages ##
+
  - up1_control : Control configuration (TODO)
  - up1_description : Robot description URDF
  - up1_msgs : Message definitions (TODO)
