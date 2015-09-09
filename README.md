@@ -1,5 +1,4 @@
-UP1
-=====
+# UP1 #
 
 Common ROS packages for the UpDroid UP1-Series, useable for both simulation and
 real robot operation.
