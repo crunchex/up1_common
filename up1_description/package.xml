@@ -1,0 +1,19 @@
+<package> 
+  <name>up1_description</name>
+  <version>1.0.0</version>
+
+  <description>Up1 Description</description>
+  <author>Nate Gallinger</author>
+
+  <maintainer email="nate@updroid.com">Nate Gallinger</maintainer>
+
+  <license>BSD</license>  
+  <url>http://ros.org/wiki/urdf_tutorial</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>urdf</build_depend>
+
+  <run_depend>urdf</run_depend>
+
+</package>
