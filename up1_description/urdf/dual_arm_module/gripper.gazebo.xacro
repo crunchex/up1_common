@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ============================   Gripper   ============================ -->
+  <xacro:macro name="gripper_gazebo" params="prefix">
+
+    <gazebo reference="${prefix}_finger1">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    
+    <gazebo reference="${prefix}_finger2">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+
+  </xacro:macro>
+
+</robot>
