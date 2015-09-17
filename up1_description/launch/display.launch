@@ -1,5 +1,5 @@
 <launch>
-	<arg name="model" default="$(find up1_description)/robots/up1.urdf"/>
+	<arg name="model" default="$(find up1_description)/urdf/up1.urdf"/>
 	<arg name="gui" default="False" />
 	<param name="robot_description" textfile="$(arg model)" />
 	<param name="use_gui" value="$(arg gui)"/>

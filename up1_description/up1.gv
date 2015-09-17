@@ -1,0 +1,80 @@
+digraph G {
+node [shape=box];
+"up1_footprint" [label="up1_footprint"];
+"base_link" [label="base_link"];
+"armroot_link" [label="armroot_link"];
+"left_armlink1" [label="left_armlink1"];
+"left_armlink2" [label="left_armlink2"];
+"left_armlink3" [label="left_armlink3"];
+"left_armlink4" [label="left_armlink4"];
+"left_armlink5" [label="left_armlink5"];
+"left_gripper" [label="left_gripper"];
+"left_finger1" [label="left_finger1"];
+"left_finger2" [label="left_finger2"];
+"right_armlink1" [label="right_armlink1"];
+"right_armlink2" [label="right_armlink2"];
+"right_armlink3" [label="right_armlink3"];
+"right_armlink4" [label="right_armlink4"];
+"right_armlink5" [label="right_armlink5"];
+"right_gripper" [label="right_gripper"];
+"right_finger1" [label="right_finger1"];
+"right_finger2" [label="right_finger2"];
+"io_link" [label="io_link"];
+"left_camera" [label="left_camera"];
+"right_camera" [label="right_camera"];
+"left_back_wheel" [label="left_back_wheel"];
+"left_front_wheel" [label="left_front_wheel"];
+"right_back_wheel" [label="right_back_wheel"];
+"right_front_wheel" [label="right_front_wheel"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"up1_footprint" -> "up1_footprint_joint" [label="xyz: 0 0 0.051 \nrpy: 0 -0 0"]
+"up1_footprint_joint" -> "base_link"
+"base_link" -> "base_to_armroot" [label="xyz: -0.01247 0 0.05187 \nrpy: 0 -0 0"]
+"base_to_armroot" -> "armroot_link"
+"armroot_link" -> "left_armroot_to_armlink1" [label="xyz: 0.01777 0.07385 0.01853 \nrpy: -2.61799 2.65359e-06 3.14159"]
+"left_armroot_to_armlink1" -> "left_armlink1"
+"left_armlink1" -> "left_armlink1_to_armlink2" [label="xyz: 0 0 -0.07038 \nrpy: -1.5708 2.65359e-06 3.14159"]
+"left_armlink1_to_armlink2" -> "left_armlink2"
+"left_armlink2" -> "left_armlink2_to_armlink3" [label="xyz: 0 0.09602 0 \nrpy: 1.5708 2.65359e-06 3.14159"]
+"left_armlink2_to_armlink3" -> "left_armlink3"
+"left_armlink3" -> "left_armlink3_to_armlink4" [label="xyz: 0 0 0.05588 \nrpy: 1.57079 -0 0"]
+"left_armlink3_to_armlink4" -> "left_armlink4"
+"left_armlink4" -> "left_armlink4_to_armlink5" [label="xyz: 0 0.07641 0 \nrpy: 0 1.5708 0"]
+"left_armlink4_to_armlink5" -> "left_armlink5"
+"left_armlink5" -> "left_gripper" [label="xyz: 0 0.138 0 \nrpy: 0 -0 0"]
+"left_gripper" -> "left_gripper"
+"left_armlink5" -> "left_gripper_joint" [label="xyz: -0.018 0.08121 0 \nrpy: 0 1.5708 0"]
+"left_gripper_joint" -> "left_finger1"
+"left_armlink5" -> "left_gripper_joint_fake" [label="xyz: 0.018 0.08121 0 \nrpy: 0 -1.5708 0"]
+"left_gripper_joint_fake" -> "left_finger2"
+"armroot_link" -> "right_armroot_to_armlink1" [label="xyz: 0.01777 -0.07385 0.01853 \nrpy: 2.61799 2.65359e-06 3.14159"]
+"right_armroot_to_armlink1" -> "right_armlink1"
+"right_armlink1" -> "right_armlink1_to_armlink2" [label="xyz: 0 0 -0.07038 \nrpy: -1.5708 2.65359e-06 3.14159"]
+"right_armlink1_to_armlink2" -> "right_armlink2"
+"right_armlink2" -> "right_armlink2_to_armlink3" [label="xyz: 0 0.09602 0 \nrpy: 1.5708 2.65359e-06 3.14159"]
+"right_armlink2_to_armlink3" -> "right_armlink3"
+"right_armlink3" -> "right_armlink3_to_armlink4" [label="xyz: 0 0 0.05588 \nrpy: 1.57079 -0 0"]
+"right_armlink3_to_armlink4" -> "right_armlink4"
+"right_armlink4" -> "right_armlink4_to_armlink5" [label="xyz: 0 0.07641 0 \nrpy: 0 1.5708 0"]
+"right_armlink4_to_armlink5" -> "right_armlink5"
+"right_armlink5" -> "right_gripper" [label="xyz: 0 0.138 0 \nrpy: 0 -0 0"]
+"right_gripper" -> "right_gripper"
+"right_armlink5" -> "right_gripper_joint" [label="xyz: -0.018 0.08121 0 \nrpy: 0 1.5708 0"]
+"right_gripper_joint" -> "right_finger1"
+"right_armlink5" -> "right_gripper_joint_fake" [label="xyz: 0.018 0.08121 0 \nrpy: 0 -1.5708 0"]
+"right_gripper_joint_fake" -> "right_finger2"
+"base_link" -> "base_to_io" [label="xyz: 0.09136 0 0.03356 \nrpy: 0 -0 0"]
+"base_to_io" -> "io_link"
+"io_link" -> "io_to_left_camera" [label="xyz: -0.01219 0.04027 0.00023 \nrpy: 0 -0 0"]
+"io_to_left_camera" -> "left_camera"
+"io_link" -> "io_to_right_camera" [label="xyz: -0.01219 -0.04027 0.00023 \nrpy: 0 -0 0"]
+"io_to_right_camera" -> "right_camera"
+"base_link" -> "base_to_left_back_wheel" [label="xyz: -0.05883 0.12922 -0.0211 \nrpy: -1.57079 0 0"]
+"base_to_left_back_wheel" -> "left_back_wheel"
+"base_link" -> "base_to_left_front_wheel" [label="xyz: 0.05569 0.12922 -0.0211 \nrpy: -1.57079 0 0"]
+"base_to_left_front_wheel" -> "left_front_wheel"
+"base_link" -> "base_to_right_back_wheel" [label="xyz: -0.05883 -0.12922 -0.0211 \nrpy: 1.57079 -0 0"]
+"base_to_right_back_wheel" -> "right_back_wheel"
+"base_link" -> "base_to_right_front_wheel" [label="xyz: 0.05569 -0.12922 -0.0211 \nrpy: 1.57079 -0 0"]
+"base_to_right_front_wheel" -> "right_front_wheel"
+}
