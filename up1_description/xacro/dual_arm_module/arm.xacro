@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find up1_description)/urdf/arm_module/arm.gazebo.xacro" />
+  <xacro:include filename="$(find up1_description)/xacro/dual_arm_module/arm.gazebo.xacro" />
 
   <!-- ============================   Arm   ============================ -->
   <xacro:macro name="arm" params="prefix reflect">
@@ -10,7 +10,7 @@
     <joint name="${prefix}_armroot_to_armlink1" type="revolute">
       <parent link="armroot_link" />
       <child link="${prefix}_armlink1" />
-      <origin rpy="${-reflect*pi/6} ${pi} 0" 
+      <origin rpy="${-reflect*pi/6} ${pi} 0"
         xyz="${armlink1_offset_x} ${-reflect*armlink1_offset_y} ${armlink1_offset_z}" />
       <axis xyz="0 0 1" />
       <limit lower="${armlink1_limit_lower}" upper="${armlink1_limit_upper}" velocity="${armlink1_velocity}" effort="${armlink1_effort}" />
@@ -19,18 +19,18 @@
     <link name="${prefix}_armlink1">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink1.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink1.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink1.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink1.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
         <mass value="0.06985"/>
-        <inertia ixx="0.00023448766" ixy="0.0000000027" ixz="0.00000001913" 
+        <inertia ixx="0.00023448766" ixy="0.0000000027" ixz="0.00000001913"
                  iyy="0.00024004726" iyz="-0.0000015393" izz="0.00007431363"/>
       </inertial>
     </link>
@@ -39,7 +39,7 @@
     <joint name="${prefix}_armlink1_to_armlink2" type="revolute">
       <parent link="${prefix}_armlink1" />
       <child link="${prefix}_armlink2" />
-      <origin rpy="${pi/2} ${pi} 0" 
+      <origin rpy="${pi/2} ${pi} 0"
         xyz="${armlink2_offset_x} ${armlink2_offset_y} ${armlink2_offset_z}" />
       <axis xyz="0 0 ${reflect*1}" />
       <limit lower="${armlink2_limit_lower}" upper="${armlink2_limit_upper}" velocity="${armlink2_velocity}" effort="${armlink2_effort}" />
@@ -48,18 +48,18 @@
     <link name="${prefix}_armlink2">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink2.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink2.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink2.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink2.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
         <mass value="0.07067"/>
-        <inertia ixx="0.00029708797" ixy="-0.00000000444" ixz="0.00000000068" 
+        <inertia ixx="0.00029708797" ixy="-0.00000000444" ixz="0.00000000068"
                  iyy="0.0000799845" iyz="-0.00000174097" izz="0.00026073683"/>
       </inertial>
     </link>
@@ -68,7 +68,7 @@
     <joint name="${prefix}_armlink2_to_armlink3" type="revolute">
       <parent link="${prefix}_armlink2" />
       <child link="${prefix}_armlink3" />
-      <origin rpy="${-pi/2} ${pi} 0" 
+      <origin rpy="${-pi/2} ${pi} 0"
         xyz="${armlink3_offset_x} ${armlink3_offset_y} ${armlink3_offset_z}" />
       <axis xyz="0 0 -1" />
       <limit lower="${armlink3_limit_lower}" upper="${armlink3_limit_upper}" velocity="${armlink3_velocity}" effort="${armlink3_effort}" />
@@ -77,18 +77,18 @@
     <link name="${prefix}_armlink3">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink3.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink3.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink3.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink3.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
         <mass value="0.04828"/>
-        <inertia ixx="0.00010408822" ixy="0.00000002684" ixz="0.00000006554" 
+        <inertia ixx="0.00010408822" ixy="0.00000002684" ixz="0.00000006554"
                  iyy="0.00008358122" iyz="0.00000001571" izz="0.00004453887"/>
       </inertial>
     </link>
@@ -97,7 +97,7 @@
     <joint name="${prefix}_armlink3_to_armlink4" type="revolute">
       <parent link="${prefix}_armlink3" />
       <child link="${prefix}_armlink4" />
-      <origin rpy="${pi/2} 0 0" 
+      <origin rpy="${pi/2} 0 0"
         xyz="${armlink4_offset_x} ${armlink4_offset_y} ${armlink4_offset_z}" />
       <axis xyz="0 0 ${reflect*1}" />
       <limit lower="${armlink4_limit_lower}" upper="${armlink4_limit_upper}" velocity="${armlink4_velocity}" effort="${armlink4_effort}" />
@@ -106,18 +106,18 @@
     <link name="${prefix}_armlink4">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink4.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink4.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink4.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink4.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
         <mass value="0.07021"/>
-        <inertia ixx="0.00022365714" ixy="0.00000581335" ixz="-0.00000002583" 
+        <inertia ixx="0.00022365714" ixy="0.00000581335" ixz="-0.00000002583"
                  iyy="0.00004497277" iyz="0.00000036702" izz="0.00022294807"/>
       </inertial>
     </link>
@@ -126,7 +126,7 @@
     <joint name="${prefix}_armlink4_to_armlink5" type="revolute">
       <parent link="${prefix}_armlink4" />
       <child link="${prefix}_armlink5" />
-      <origin rpy="0 ${pi/2} 0" 
+      <origin rpy="0 ${pi/2} 0"
         xyz="${armlink5_offset_x} ${armlink5_offset_y} ${armlink5_offset_z}" />
       <axis xyz="0 0 ${-reflect*1}" />
       <limit lower="${armlink5_limit_lower}" upper="${armlink5_limit_upper}" velocity="${armlink5_velocity}" effort="${armlink5_effort}" />
@@ -135,32 +135,32 @@
     <link name="${prefix}_armlink5">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink5.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink5.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/armlink5.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/dual_arm/armlink5.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
         <mass value="0.07134"/>
-        <inertia ixx="0.00024486788" ixy="-0.00000179765" ixz="-0.0000013121" 
+        <inertia ixx="0.00024486788" ixy="-0.00000179765" ixz="-0.0000013121"
                  iyy="0.00007141374" iyz="0.00000015595" izz="0.0002397239"/>
       </inertial>
     </link>
-    
+
     <!-- Gripper Joint -->
     <joint name="${prefix}_gripper" type="fixed">
       <parent link="${prefix}_armlink5" />
       <child link="${prefix}_gripper" />
-      <origin rpy="0 0 0" 
+      <origin rpy="0 0 0"
         xyz="${gripper_offset_x} ${gripper_offset_y} ${gripper_offset_z}" />
     </joint>
     <!-- Gripper -->
     <link name="${prefix}_gripper" />
-    
+
     <xacro:arm_gazebo prefix="${prefix}" />
 
   </xacro:macro>

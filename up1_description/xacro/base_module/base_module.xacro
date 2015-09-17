@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find up1_description)/urdf/base_module/wheel.xacro" />
-  <xacro:include filename="$(find up1_description)/urdf/base_module/base_module.gazebo.xacro" />
+  <xacro:include filename="$(find up1_description)/xacro/base_module/wheel.xacro" />
+  <xacro:include filename="$(find up1_description)/xacro/base_module/base_module.gazebo.xacro" />
 
   <!-- ============================   Base Module   ============================ -->
   <xacro:macro name="base_module">
@@ -25,7 +25,7 @@
           <box size="0.001 0.001 0.001" />
         </geometry>
       </collision>
-    </link> 
+    </link>
     <joint name="up1_footprint_joint" type="fixed">
       <origin xyz="0 0 0.051" rpy="0 0 0" />
       <child link="base_link" />
@@ -36,24 +36,24 @@
     <link name="base_link">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/base.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="grey" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/base.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
         <mass value="0.30813"/>
-        <inertia ixx="0.00175941073" ixy="0.00000172768" ixz="-0.00008279443" 
+        <inertia ixx="0.00175941073" ixy="0.00000172768" ixz="-0.00008279443"
                  iyy="0.00172024238" iyz="0.00000045789" izz="0.00311278092"/>
       </inertial>
     </link>
-    
+
     <xacro:base_module_gazebo />
-  
+
     <xacro:wheel prefix="right" reflect="1" />
     <xacro:wheel prefix="left" reflect="-1" />
 

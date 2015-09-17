@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
+
+  <xacro:include filename="$(find up1_description)/xacro/common.xacro" />
+  <xacro:include filename="$(find up1_description)/xacro/dual_arm_module/two_arm_module.xacro" />
+  <xacro:include filename="$(find up1_description)/xacro/base_module/base_module.xacro" />
+  <xacro:include filename="$(find up1_description)/xacro/io_module/io_module.xacro" />
+
+  <xacro:base_module />
+  <xacro:io_module />
+  <xacro:two_arm_module />
+
+</robot>

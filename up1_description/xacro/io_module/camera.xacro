@@ -14,18 +14,18 @@
     <link name="${prefix}_camera">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/camera.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/io/camera.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="black" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/camera.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/io/camera.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
         <mass value="0.00488"/>
-        <inertia ixx="0.00000029098" ixy="0.0" ixz="0.0" 
+        <inertia ixx="0.00000029098" ixy="0.0" ixz="0.0"
                  iyy="0.00000085538" iyz="0.0" izz="0.00000085538"/>
       </inertial>
     </link>
