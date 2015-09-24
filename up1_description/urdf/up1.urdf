@@ -4,7 +4,7 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="up1" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <!-- ============================   Base Module   ============================ -->
+  <!-- ============================   Common   ============================ -->
   <material name="black">
     <color rgba="0 0 0 1"/>
   </material>
