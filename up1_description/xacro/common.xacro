@@ -103,4 +103,6 @@
     <color rgba="1 1 0 1" />
   </material>
 
+  <xacro:common_gazebo />
+
 </robot>

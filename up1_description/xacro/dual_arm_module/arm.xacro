@@ -162,6 +162,7 @@
     <link name="${prefix}_gripper" />
 
     <xacro:arm_gazebo prefix="${prefix}" />
+    <xacro:arm_transmission prefix="${prefix}" />
 
   </xacro:macro>
 

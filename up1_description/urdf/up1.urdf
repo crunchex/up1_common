@@ -26,6 +26,12 @@
   <material name="yellow">
     <color rgba="1 1 0 1"/>
   </material>
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/up1</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
   <!-- ============================   Arm   ============================ -->
   <!-- ============================   Arm   ============================ -->
   <!-- ============================   Arm   ============================ -->
@@ -447,6 +453,51 @@
   <gazebo reference="right_armlink5">
     <turnGravityOff>true</turnGravityOff>
   </gazebo>
+  <transmission name="right_armroot_to_armlink1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_armroot_to_armlink1">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_armroot_to_armlink1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_armlink1_to_armlink2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_armlink1_to_armlink2">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_armlink1_to_armlink2_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_armlink2_to_armlink3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_armlink2_to_armlink3">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_armlink2_to_armlink3_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_armlink3_to_armlink4_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_armlink3_to_armlink4">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_armlink3_to_armlink4_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_armlink4_to_armlink5_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_armlink4_to_armlink5">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_armlink4_to_armlink5_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <!-- Arm Joint 1 -->
   <joint name="left_armroot_to_armlink1" type="revolute">
     <parent link="armroot_link"/>
@@ -600,6 +651,51 @@
   <gazebo reference="left_armlink5">
     <turnGravityOff>true</turnGravityOff>
   </gazebo>
+  <transmission name="left_armroot_to_armlink1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_armroot_to_armlink1">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_armroot_to_armlink1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_armlink1_to_armlink2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_armlink1_to_armlink2">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_armlink1_to_armlink2_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_armlink2_to_armlink3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_armlink2_to_armlink3">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_armlink2_to_armlink3_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_armlink3_to_armlink4_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_armlink3_to_armlink4">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_armlink3_to_armlink4_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_armlink4_to_armlink5_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_armlink4_to_armlink5">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_armlink4_to_armlink5_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <!-- Finger Joint 1 -->
   <joint name="right_gripper_joint" type="prismatic">
     <parent link="right_armlink5"/>
