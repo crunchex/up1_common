@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:include filename="$(find up1_description)/xacro/dual_arm_module/arm.xacro" />
+  <xacro:include filename="$(find up1_description)/xacro/dual_arm_module/arm.transmission.xacro" />
   <xacro:include filename="$(find up1_description)/xacro/dual_arm_module/gripper.xacro" />
   <xacro:include filename="$(find up1_description)/xacro/dual_arm_module/arm_module.gazebo.xacro" />
 
