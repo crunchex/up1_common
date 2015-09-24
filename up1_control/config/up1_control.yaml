@@ -1,0 +1,88 @@
+up1:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers ---------------------------------------
+  left_arm_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+       - left_armroot_to_armlink1
+       - left_armlink1_to_armlink2
+       - left_armlink2_to_armlink3
+       - left_armlink3_to_armlink4
+       - left_armlink4_to_armlink5
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0.05
+        left_armroot_to_armlink1: {trajectory: 0.1, goal: 0.1}
+        left_armlink1_to_armlink2: {trajectory: 0.1, goal: 0.1}
+        left_armlink2_to_armlink3: {trajectory: 0.1, goal: 0.1}
+        left_armlink3_to_armlink4: {trajectory: 0.1, goal: 0.1}
+        left_armlink4_to_armlink5: {trajectory: 0.1, goal: 0.1}
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
+
+  right_arm_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+       - right_armroot_to_armlink1
+       - right_armlink1_to_armlink2
+       - right_armlink2_to_armlink3
+       - right_armlink3_to_armlink4
+       - right_armlink4_to_armlink5
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0.05
+        right_armroot_to_armlink1: {trajectory: 0.1, goal: 0.1}
+        right_armlink1_to_armlink2: {trajectory: 0.1, goal: 0.1}
+        right_armlink2_to_armlink3: {trajectory: 0.1, goal: 0.1}
+        right_armlink3_to_armlink4: {trajectory: 0.1, goal: 0.1}
+        right_armlink4_to_armlink5: {trajectory: 0.1, goal: 0.1}
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
+
+  # left_armroot_to_armlink1_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: left_armroot_to_armlink1
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # left_armlink1_to_armlink2_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: left_armlink1_to_armlink2
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # left_armlink2_to_armlink3_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: left_armlink2_to_armlink3
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # left_armlink3_to_armlink4_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: left_armlink3_to_armlink4
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # left_armlink4_to_armlink5_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: left_armlink4_to_armlink5
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  #
+  # right_armroot_to_armlink1_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: right_armroot_to_armlink1
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # right_armlink1_to_armlink2_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: right_armlink1_to_armlink2
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # right_armlink2_to_armlink3_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: right_armlink2_to_armlink3
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # right_armlink3_to_armlink4_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: right_armlink3_to_armlink4
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # right_armlink4_to_armlink5_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: right_armlink4_to_armlink5
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
