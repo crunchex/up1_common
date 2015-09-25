@@ -26,4 +26,10 @@
     <remap from="/joint_states" to="/up1/joint_states" />
   </node>
 
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="true" />
+    <rosparam param="/source_list">["/up1/joint_states"]</rosparam>
+    <remap from="/joint_states" to="/up1/joint_states" />
+  </node> -->
+
 </launch>
