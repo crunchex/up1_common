@@ -8,7 +8,7 @@
   <xacro:include filename="$(find up1_description)/xacro/dual_arm_module/arm_module.gazebo.xacro" />
 
   <!-- ============================   Arm Module   ============================ -->
-  <xacro:macro name="two_arm_module">
+  <xacro:macro name="manipulator_module">
     <!-- Armroot Joint -->
     <joint name="base_to_armroot" type="fixed">
       <parent link="base_link" />
