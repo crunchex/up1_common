@@ -5,8 +5,11 @@
   <rosparam file="$(find up1_control)/config/control.yaml" command="load"/>
 
   <!-- Load the controllers -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="/up1"
-    args="--shutdown-timeout 3 joint_state_controller left_gripper_controller left_gripper_fake_controller right_gripper_controller right_gripper_fake_controller left_arm_controller right_arm_controller " />
+  <!-- TODO: add this separate controller spawner for non-arm stuff like the base (twist) -->
+  <!-- <node name="base_controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="/up1"
+    args="--shutdown-timeout 3 " /> -->
+  <node name="manipulator_controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="/up1"
+    args="--shutdown-timeout 3 left_gripper_controller left_gripper_fake_controller right_gripper_controller right_gripper_fake_controller left_arm_controller right_arm_controller" />
 
   <!-- TODO: Multiplex twist sources -->
   <!-- <node pkg="twist_mux" type="twist_mux" name="twist_mux">
