@@ -1,35 +1,11 @@
+<?xml version="1.0"?>
 <launch>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find up1_control)/config/up1_control.yaml" command="load"/>
 
-  <!-- load the controllers -->
-  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" ns="/up1"
-    args="left_armroot_to_armlink1_position_controller
-          left_armlink1_to_armlink2_position_controller
-          left_armlink2_to_armlink3_position_controller
-          left_armlink3_to_armlink4_position_controller
-          left_armlink4_to_armlink5_position_controller
-          right_armroot_to_armlink1_position_controller
-          right_armlink1_to_armlink2_position_controller
-          right_armlink2_to_armlink3_position_controller
-          right_armlink3_to_armlink4_position_controller
-          right_armlink4_to_armlink5_position_controller
-          joint_state_controller" /> -->
-
+  <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
     output="screen" ns="/up1" args="joint_state_controller left_gripper_controller left_gripper_fake_controller right_gripper_controller right_gripper_fake_controller left_arm_controller right_arm_controller " />
-
-  <!-- convert joint states to TF transforms for rviz, etc -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-    <remap from="/joint_states" to="/up1/joint_states" />
-  </node>
-
-  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="use_gui" value="true" />
-    <rosparam param="/source_list">["/up1/joint_states"]</rosparam>
-    <remap from="/joint_states" to="/up1/joint_states" />
-  </node> -->
 
 </launch>
