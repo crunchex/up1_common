@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find up1_description)/xacro/dual_arm_module/arm.gazebo.xacro" />
+  <xacro:include filename="$(find up1_description)/xacro/manipulator_module/dual_arm_module/arm.gazebo.xacro" />
 
   <!-- ============================   Arm   ============================ -->
   <xacro:macro name="arm" params="prefix reflect">
