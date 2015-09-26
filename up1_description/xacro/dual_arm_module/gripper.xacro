@@ -66,6 +66,7 @@
     </link>
 
     <xacro:gripper_gazebo prefix="${prefix}" />
+    <xacro:gripper_transmission prefix="${prefix}" />
 
   </xacro:macro>
 

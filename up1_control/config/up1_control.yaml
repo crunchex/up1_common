@@ -5,6 +5,14 @@ up1:
     publish_rate: 50
 
   # Position Controllers ---------------------------------------
+  left_gripper_controller:
+    type: position_controllers/GripperActionController
+    joint: left_gripper_joint
+
+  right_gripper_controller:
+    type: position_controllers/GripperActionController
+    joint: right_gripper_joint
+
   left_arm_controller:
     type: position_controllers/JointTrajectoryController
     joints:
@@ -44,6 +52,64 @@ up1:
     stop_trajectory_duration: 0.5
     state_publish_rate:  25
     action_monitor_rate: 10
+
+  left_jt_cart_controller:
+    type: robot_mechanism_controllers/JTCartesianController
+    root_name: armroot
+    tip_name: left_finger1
+    k_posture: 25.0
+    jacobian_inverse_damping: 0.01
+    pose_command_filter: 0.01
+    cart_gains:
+      trans:
+        p: 800.0
+        d: 15.0
+      rot:
+        p: 80.0
+        d: 1.2
+    joint_feedforward:
+      left_armroot_to_armlink1: 3.33
+      left_armlink1_to_armlink2: 1.16
+      left_armlink2_to_armlink3: 0.1
+      left_armlink3_to_armlink4: 0.25
+      left_armlink4_to_armlink5: 0.133
+    joint_max_effort:
+      left_armroot_to_armlink1: 11.88
+      left_armlink1_to_armlink2: 11.64
+      left_armlink2_to_armlink3: 6.143
+      left_armlink3_to_armlink4: 6.804
+      left_armlink4_to_armlink5: 8.376
+    vel_saturation_trans: 2.0
+    vel_saturation_rot: 4.0
+
+  right_jt_cart_controller:
+    type: robot_mechanism_controllers/JTCartesianController
+    root_name: armroot
+    tip_name: right_finger1
+    k_posture: 25.0
+    jacobian_inverse_damping: 0.01
+    pose_command_filter: 0.01
+    cart_gains:
+      trans:
+        p: 800.0
+        d: 15.0
+      rot:
+        p: 80.0
+        d: 1.2
+    joint_feedforward:
+      right_armroot_to_armlink1: 3.33
+      right_armlink1_to_armlink2: 1.16
+      right_armlink2_to_armlink3: 0.1
+      right_armlink3_to_armlink4: 0.25
+      right_armlink4_to_armlink5: 0.133
+    joint_max_effort:
+      right_armroot_to_armlink1: 11.88
+      right_armlink1_to_armlink2: 11.64
+      right_armlink2_to_armlink3: 6.143
+      right_armlink3_to_armlink4: 6.804
+      right_armlink4_to_armlink5: 8.376
+    vel_saturation_trans: 2.0
+    vel_saturation_rot: 4.0
 
   # left_armroot_to_armlink1_position_controller:
   #   type: effort_controllers/JointPositionController

@@ -37,6 +37,7 @@
   <!-- ============================   Arm   ============================ -->
   <!-- ============================   Gripper   ============================ -->
   <!-- ============================   Gripper   ============================ -->
+  <!-- ============================   Gripper   ============================ -->
   <!-- ============================   Arm Module   ============================ -->
   <!-- ============================   Wheel   ============================ -->
   <!-- ============================   Base Module   ============================ -->
@@ -755,6 +756,15 @@
   <gazebo reference="right_finger2">
     <turnGravityOff>true</turnGravityOff>
   </gazebo>
+  <transmission name="right_gripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_gripper_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_gripper_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <!-- Finger Joint 1 -->
   <joint name="left_gripper_joint" type="prismatic">
     <parent link="left_armlink5"/>
@@ -814,5 +824,14 @@
   <gazebo reference="left_finger2">
     <turnGravityOff>true</turnGravityOff>
   </gazebo>
+  <transmission name="left_gripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_gripper_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_gripper_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 </robot>
 
