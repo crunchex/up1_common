@@ -9,9 +9,17 @@ up1:
     type: position_controllers/GripperActionController
     joint: left_gripper_joint
 
+  left_gripper_fake_controller:
+    type: position_controllers/GripperActionController
+    joint: left_gripper_joint_fake
+
   right_gripper_controller:
     type: position_controllers/GripperActionController
     joint: right_gripper_joint
+
+  right_gripper_fake_controller:
+    type: position_controllers/GripperActionController
+    joint: right_gripper_joint_fake
 
   left_arm_controller:
     type: position_controllers/JointTrajectoryController

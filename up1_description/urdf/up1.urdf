@@ -765,6 +765,15 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <transmission name="right_gripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_gripper_joint_fake">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_gripper_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <!-- Finger Joint 1 -->
   <joint name="left_gripper_joint" type="prismatic">
     <parent link="left_armlink5"/>
@@ -827,6 +836,15 @@
   <transmission name="left_gripper_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="left_gripper_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_gripper_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_gripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_gripper_joint_fake">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="left_gripper_motor">

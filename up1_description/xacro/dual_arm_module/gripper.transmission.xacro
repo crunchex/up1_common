@@ -14,6 +14,16 @@
       </actuator>
     </transmission>
 
+    <transmission name="${prefix}_gripper_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}_gripper_joint_fake">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}_gripper_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
   </xacro:macro>
 
 </robot>
