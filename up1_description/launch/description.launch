@@ -1,13 +1,19 @@
 <?xml version="1.0"?>
 <launch>
 
-  <!-- Load robot configuration -->
-  <rosparam file="$(find up1_description)/config/modules.yaml" command="load" />
-
   <!-- Load robot description -->
-  <!-- TODO: xacro should load actual xacro files and not the generated urdf -->
-  <!-- TODO: should load the proper xacro files based on the modules defined in config file above -->
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find up1_description)/urdf/up1.urdf"/>
+  <!-- TODO: figure out how to get these parameters from the modules.yaml file or parameter server -->
+  <arg name="base_module" default="base" />
+  <arg name="manipulator_module" default="dual_arm" />
+  <arg name="io_module" default="io" />
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find up1_description)/xacro/up1.xacro
+      base_module:=$(arg base_module)
+      manipulator_module:=$(arg manipulator_module)
+      io_module:=$(arg io_module)" />
+
+  <!-- Load robot configuration to parameter server -->
+  <rosparam file="$(find up1_description)/config/modules.yaml" command="load" />
 
   <!-- Start the robot state publisher -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />

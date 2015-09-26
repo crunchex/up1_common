@@ -3,15 +3,15 @@
 
 # Currently supported modules:
 #   base_module:
-#     - wheeled_diff_drive
+#     - base
 #   manipulator_module:
 #     - dual_arm
 #     - mono_arm
 #   io_module:
-#     - stereo_cam
+#     - io
 
 up1:
   modules:
-    base_module: wheeled_diff_drive
+    base_module: base
     manipulator_module: dual_arm
-    io_module: stereo_cam
+    io_module: io
