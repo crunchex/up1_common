@@ -1,5 +1,0 @@
-<launch>
-    <group>
-      <param name="robot_description" command="$(find xacro)/xacro.py '$(find up1_description)/xacro/up1_two_arms.xacro'" />
-    </group>
-</launch>
