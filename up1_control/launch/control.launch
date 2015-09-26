@@ -8,4 +8,10 @@
   <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="/up1"
     args="--shutdown-timeout 3 joint_state_controller left_gripper_controller left_gripper_fake_controller right_gripper_controller right_gripper_fake_controller left_arm_controller right_arm_controller " />
 
+  <!-- TODO: Multiplex twist sources -->
+  <!-- <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find up1_control)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="up1_velocity_controller/cmd_vel"/>
+  </node> -->
+
 </launch>
