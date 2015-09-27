@@ -7,7 +7,7 @@
 
   <!-- Load universal robot description format (URDF) -->
   <param if="$(arg load_robot_description)" name="$(arg robot_description)"
-    command="$(find xacro)/xacro.py $(find up1_description)/xacro/up1_two_arms.xacro"/>
+    command="$(find xacro)/xacro.py $(find up1_description)/xacro/up1.xacro manipulator_module:=dual_arm base_module:=base io_module:=io"/>
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic" textfile="$(find up1_moveit_config)/config/up1.srdf" />
