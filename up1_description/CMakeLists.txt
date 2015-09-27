@@ -1,14 +1,15 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(up1_description)
 
-find_package(catkin)
+find_package(catkin REQUIRED COMPONENTS roslaunch)
+
 catkin_package()
 
-foreach(dir launch meshes urdf)
-  install(DIRECTORY ${dir}/
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+# http://wiki.ros.org/roslaunch#Catkin
+roslaunch_add_file_check(launch)
 
-install(
-  FILES urdf.rviz urdf.vcg
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+# TODO: rename xacro => urdf
+# TODO: create real scripts
+install(DIRECTORY config launch meshes xacro
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
