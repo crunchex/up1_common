@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <name>up1_common</name>
+  <version>0.1.0</version>
+  <description>Metapackage for UpDroid UP1 common software</description>
+
+  <maintainer email="mike@updroid.com">Mike Lewis</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://www.updroid.com</url>
+  <url type="repository">http://bitbucket.org/updroid/up1_common</url>
+
+  <author email="mike@updroid.com">Mike Lewis</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>up1_control</build_depend>
+  <build_depend>up1_description</build_depend>
+  <build_depend>up1_left_arm_kinematics</build_depend>
+  <build_depend>up1_moveit_config</build_depend>
+  <build_depend>up1_right_arm_kinematics</build_depend>
+  <run_depend>up1_control</run_depend>
+  <run_depend>up1_description</run_depend>
+  <run_depend>up1_left_arm_kinematics</run_depend>
+  <run_depend>up1_moveit_config</run_depend>
+  <run_depend>up1_right_arm_kinematics</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
