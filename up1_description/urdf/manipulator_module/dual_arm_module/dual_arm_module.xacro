@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find up1_description)/xacro/manipulator_module/dual_arm_module/arm.xacro" />
-  <xacro:include filename="$(find up1_description)/xacro/manipulator_module/dual_arm_module/arm.transmission.xacro" />
-  <xacro:include filename="$(find up1_description)/xacro/manipulator_module/dual_arm_module/gripper.xacro" />
-  <xacro:include filename="$(find up1_description)/xacro/manipulator_module/dual_arm_module/gripper.transmission.xacro" />
-  <xacro:include filename="$(find up1_description)/xacro/manipulator_module/dual_arm_module/arm_module.gazebo.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm.transmission.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/gripper.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/gripper.transmission.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm_module.gazebo.xacro" />
 
   <!-- ============================   Arm Module   ============================ -->
-  <xacro:macro name="left_arm_module">
+  <xacro:macro name="manipulator_module">
     <!-- Armroot Joint -->
     <joint name="base_to_armroot" type="fixed">
       <parent link="base_link" />
@@ -37,7 +37,10 @@
 
     <xacro:arm_module_gazebo />
 
+    <xacro:arm prefix="right" reflect="1" />
     <xacro:arm prefix="left" reflect="-1" />
+
+    <xacro:gripper prefix="right" reflect="1" />
     <xacro:gripper prefix="left" reflect="-1" />
 
   </xacro:macro>

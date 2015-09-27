@@ -7,7 +7,7 @@
   <arg name="manipulator_module" default="dual_arm" />
   <arg name="io_module" default="io" />
 
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find up1_description)/xacro/up1.xacro
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find up1_description)/urdf/up1.xacro
       base_module:=$(arg base_module)
       manipulator_module:=$(arg manipulator_module)
       io_module:=$(arg io_module)" />

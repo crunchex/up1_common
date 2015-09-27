@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find up1_description)/xacro/common.gazebo.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/common.gazebo.xacro" />
 
   <xacro:property name="pi" value="3.14159" />
 

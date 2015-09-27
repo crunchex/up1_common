@@ -6,13 +6,13 @@
   <xacro:arg name="base_module" default="base" />
   <xacro:arg name="io_module" default="io" /> -->
 
-  <xacro:include filename="$(find up1_description)/xacro/common.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/common.xacro" />
 
-  <xacro:include filename="$(find up1_description)/xacro/manipulator_module/$(arg manipulator_module)_module/$(arg manipulator_module)_module.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/$(arg manipulator_module)_module/$(arg manipulator_module)_module.xacro" />
 
   <!-- TODO: the other modules will eventually need to be modularized based on config -->
-  <xacro:include filename="$(find up1_description)/xacro/base_module/$(arg base_module)_module.xacro" />
-  <xacro:include filename="$(find up1_description)/xacro/io_module/$(arg io_module)_module.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/base_module/$(arg base_module)_module.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/io_module/$(arg io_module)_module.xacro" />
 
   <xacro:manipulator_module />
   <xacro:base_module />

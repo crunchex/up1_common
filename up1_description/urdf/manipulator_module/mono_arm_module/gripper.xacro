@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find up1_description)/xacro/mono_arm_module/gripper.gazebo.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/mono_arm_module/gripper.gazebo.xacro" />
 
   <!-- ============================   Gripper   ============================ -->
   <xacro:macro name="gripper" params="prefix reflect">

@@ -8,8 +8,7 @@ catkin_package()
 # http://wiki.ros.org/roslaunch#Catkin
 roslaunch_add_file_check(launch)
 
-# TODO: rename xacro => urdf
 # TODO: create real scripts
-install(DIRECTORY config launch meshes xacro
+install(DIRECTORY config launch meshes urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
