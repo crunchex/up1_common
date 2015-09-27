@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
   <xacro:include filename="$(find up1_description)/urdf/base_module/wheel.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/base_module/base_module.gazebo.xacro" />
 
-  <!-- ============================   Base Module   ============================ -->
   <xacro:macro name="base_module">
+    <!-- ============================   Base Module   ============================ -->
 
     <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link origin,
          navigation stack dedpends on this frame -->

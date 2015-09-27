@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
-  <!-- ============================   Camera   ============================ -->
   <xacro:macro name="camera" params="prefix reflect">
-
+    <!-- ============================   Camera   ============================ -->
+    
     <!-- Camera Joint -->
     <joint name="io_to_${prefix}_camera" type="fixed">
       <parent link="io_link" />

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
-  <!-- ============================   Arm   ============================ -->
   <xacro:macro name="arm_transmission" params="prefix">
-
+    <!-- ============================   Arm Transmission  ============================ -->
+    
     <transmission name="${prefix}_armroot_to_armlink1_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${prefix}_armroot_to_armlink1">

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
-  <!-- ============================   Wheel   ============================ -->
   <xacro:macro name="wheel" params="prefix reflect">
+    <!-- ============================   Wheel   ============================ -->
 
     <!-- Front Wheel Joint -->
     <joint name="base_to_${prefix}_front_wheel" type="continuous">

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm.gazebo.xacro" />
 
-  <!-- ============================   Arm   ============================ -->
   <xacro:macro name="arm" params="prefix reflect">
+    <!-- ============================   Arm   ============================ -->
 
     <!-- Arm Joint 1 -->
     <joint name="${prefix}_armroot_to_armlink1" type="revolute">

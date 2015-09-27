@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
   <xacro:include filename="$(find up1_description)/urdf/io_module/camera.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/io_module/io_module.gazebo.xacro" />
 
-  <!-- ============================   IO Module   ============================ -->
   <xacro:macro name="io_module">
+    <!-- ============================   IO Module   ============================ -->
 
     <!-- IO Joint -->
     <joint name="base_to_io" type="fixed">

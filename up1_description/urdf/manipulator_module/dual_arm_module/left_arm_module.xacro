@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm.transmission.xacro" />
@@ -7,8 +7,9 @@
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/gripper.transmission.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm_module.gazebo.xacro" />
 
-  <!-- ============================   Arm Module   ============================ -->
-  <xacro:macro name="left_arm_module">
+  <xacro:macro name="manipulator_module">
+    <!-- ============================   Left Arm Module   ============================ -->
+
     <!-- Armroot Joint -->
     <joint name="base_to_armroot" type="fixed">
       <parent link="base_link" />
