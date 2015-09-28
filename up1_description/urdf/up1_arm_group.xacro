@@ -2,11 +2,11 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
   <!-- This syntax does not appear to work, even in ros-indigo -->
-  <xacro:arg name="manipulator_module" default="dual_arm" />
+  <!-- <xacro:arg name="side" default="left_arm" /> -->
 
   <xacro:include filename="$(find up1_description)/urdf/common.xacro" />
-  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/$(arg manipulator_module)_module.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/$(arg side)_arm_group.xacro" />
 
-  <xacro:manipulator_module />
+  <xacro:arm_group />
 
 </robot>
