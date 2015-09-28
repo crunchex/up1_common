@@ -6,18 +6,18 @@ A package containing the UpDroid UP1-Series description and helper tools for IK 
 
 These are the general steps for generating the IKFast solvers for UP1's arms:
 ```bash
-# Use OpenRave to generate the C++ code for the plugin.
-rosrun collada_urdf urdf_to_collada up1_left_arm_module.urdf up1_left_arm_module.dae
-rosrun moveit_ikfast round_collada_numbers.py up1_left_arm_module.dae up1_left_arm_module_rounded.dae 5
-openrave-robot.py up1_left_arm_module_rounded.dae --info links
-python `openrave-config --python-dir`/openravepy/_openravepy_0_9/ikfast.py --robot=`rospack find up1_description`/urdf/up1_left_arm_module_rounded.dae --iktype=translationdirection5d --baselink=1 --eelink=8 --savefile=ikfast_up1_left_arm_module.cpp
+# Use OpenRave to generate the C++ code for the left arm plugin.
+rosrun collada_urdf urdf_to_collada left_arm_group.urdf left_arm_group.dae
+rosrun moveit_ikfast round_collada_numbers.py left_arm_group.dae left_arm_group_rounded.dae 5
+openrave-robot.py left_arm_group_rounded.dae --info links
+python `openrave-config --python-dir`/openravepy/_openravepy_0_9/ikfast.py --robot=`rospack find up1_description`/urdf/left_arm_group_rounded.dae --iktype=translationdirection5d --baselink=0 --eelink=5 --savefile=ikfast_up1_left_arm.cpp
 
-# Create a MoveIt! package for the arm kinematics.
-catkin_create_pkg up1_left_arm_module_kinematics
-cd up1_left_arm_module_kinematics
+# Create a MoveIt! package for the left arm kinematics.
+catkin_create_pkg up1_left_arm_kinematics
+cd up1_left_arm_kinematics
 mkdir src
-cp ../up1_description/urdf/ikfast_up1_left_arm_module.cpp src/
-rosrun moveit_ikfast create_ikfast_moveit_plugin.py up1 left_arm_group up1_left_arm_module_kinematics src/ikfast_up1_left_arm_module.cpp
+cp ../up1_description/urdf/ikfast_up1_left_arm.cpp src/
+rosrun moveit_ikfast create_ikfast_moveit_plugin.py up1 left_arm up1_left_arm_kinematics src/ikfast_up1_left_arm.cpp
 catkin_make
 ```
 
