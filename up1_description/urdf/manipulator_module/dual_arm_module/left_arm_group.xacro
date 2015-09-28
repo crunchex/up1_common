@@ -12,11 +12,7 @@
     <!-- This xacro group is intended to be the source URDF for an IKFast solver -->
 
     <xacro:arm_root_link />
-
-    <xacro:arm_module_gazebo />
-
     <xacro:arm prefix="left" reflect="-1" />
-    <xacro:gripper prefix="left" reflect="-1" />
 
   </xacro:macro>
 

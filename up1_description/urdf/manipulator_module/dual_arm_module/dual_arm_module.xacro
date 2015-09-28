@@ -20,8 +20,6 @@
 
     <xacro:arm_root_link />
 
-    <xacro:arm_module_gazebo />
-
     <xacro:arm prefix="right" reflect="1" />
     <xacro:arm prefix="left" reflect="-1" />
 
