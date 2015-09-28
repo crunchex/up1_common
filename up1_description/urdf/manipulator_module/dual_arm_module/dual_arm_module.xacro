@@ -6,7 +6,6 @@
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm.transmission.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/gripper.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/gripper.transmission.xacro" />
-  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm_module.gazebo.xacro" />
 
   <xacro:macro name="manipulator_module">
     <!-- ============================   Dual Arm Module   ============================ -->
