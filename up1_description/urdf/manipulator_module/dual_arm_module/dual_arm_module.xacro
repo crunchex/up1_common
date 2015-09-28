@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm_root_link.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/arm.transmission.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/dual_arm_module/gripper.xacro" />
@@ -9,6 +10,7 @@
 
   <xacro:macro name="manipulator_module">
     <!-- ============================   Dual Arm Module   ============================ -->
+    <!-- This xacro group is intended to be used in a full UP1 robot URDF -->
 
     <!-- Armroot Joint -->
     <joint name="base_to_armroot" type="fixed">
@@ -16,25 +18,8 @@
       <child link="armroot_link" />
       <origin xyz="${armroot_offset_x} ${armroot_offset_y} ${armroot_offset_z}" />
     </joint>
-    <!-- Armroot Link -->
-    <link name="armroot_link">
-      <visual>
-        <geometry>
-          <mesh filename="package://up1_description/meshes/dual_arm/armroot.stl" scale="0.001 0.001 0.001" />
-        </geometry>
-        <material name="grey" />
-      </visual>
-      <collision>
-        <geometry>
-          <mesh filename="package://up1_description/meshes/dual_arm/armroot.stl" scale="0.001 0.001 0.001" />
-        </geometry>
-      </collision>
-      <inertial>
-        <mass value="0.20657"/>
-        <inertia ixx="0.00096240277" ixy="-0.00000350376" ixz="0.00002354169"
-                 iyy="0.00057897825" iyz="0.00000127419" izz="0.00134814249"/>
-      </inertial>
-    </link>
+
+    <xacro:arm_root_link />
 
     <xacro:arm_module_gazebo />
 
