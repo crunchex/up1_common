@@ -8,7 +8,7 @@ catkin_package()
 # http://wiki.ros.org/roslaunch#Catkin
 roslaunch_add_file_check(launch)
 
-# TODO: create real scripts
+# TODO: create scripts for generating the ikfast cpp stuff.
 install(DIRECTORY config launch meshes urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
