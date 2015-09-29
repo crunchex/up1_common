@@ -3,7 +3,7 @@
 
   <xacro:macro name="arm_gazebo" params="prefix">
     <!-- ============================   Arm Gazebo  ============================ -->
-    
+
     <gazebo reference="${prefix}_armlink1">
       <turnGravityOff>true</turnGravityOff>
     </gazebo>
@@ -20,7 +20,7 @@
       <turnGravityOff>true</turnGravityOff>
     </gazebo>
 
-    <gazebo reference="${prefix}_armlink5">
+    <gazebo reference="${prefix}_gripper">
       <turnGravityOff>true</turnGravityOff>
     </gazebo>
 

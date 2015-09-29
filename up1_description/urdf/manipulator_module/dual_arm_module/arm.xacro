@@ -128,9 +128,9 @@
       <parent link="${prefix}_armlink4" />
       <child link="${prefix}_gripper" />
       <origin rpy="0 ${pi/2} 0"
-        xyz="${armlink5_offset_x} ${armlink5_offset_y} ${armlink5_offset_z}" />
+        xyz="${gripper_offset_x} ${gripper_offset_y} ${gripper_offset_z}" />
       <axis xyz="0 0 ${-reflect*1}" />
-      <limit lower="${armlink5_limit_lower}" upper="${armlink5_limit_upper}" velocity="${armlink5_velocity}" effort="${armlink5_effort}" />
+      <limit lower="${gripper_limit_lower}" upper="${gripper_limit_upper}" velocity="${gripper_velocity}" effort="${gripper_effort}" />
     </joint>
     <!-- Gripper Link -->
     <link name="${prefix}_gripper">
