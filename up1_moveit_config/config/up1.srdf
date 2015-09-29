@@ -1,0 +1,266 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="up1">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="left_arm">
+        <chain base_link="armroot_link" tip_link="left_gripper" />
+    </group>
+    <group name="left_gripper">
+        <link name="left_finger1" />
+        <link name="left_finger2" />
+        <link name="left_gripper" />
+    </group>
+    <group name="right_arm">
+        <chain base_link="armroot_link" tip_link="right_gripper" />
+    </group>
+    <group name="right_gripper">
+        <link name="right_finger1" />
+        <link name="right_finger2" />
+        <link name="right_gripper" />
+    </group>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="left_eef" parent_link="left_gripper" group="left_gripper" />
+    <end_effector name="right_eef" parent_link="right_gripper" group="right_gripper" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="virtual_joint" type="planar" parent_frame="odom_combined" child_link="up1_footprint" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="armroot_link" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="armroot_link" link2="io_link" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_armlink1" reason="Adjacent" />
+    <disable_collisions link1="armroot_link" link2="left_armlink2" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_armlink3" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_armlink4" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_back_wheel" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_camera" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_armlink1" reason="Adjacent" />
+    <disable_collisions link1="armroot_link" link2="right_armlink2" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_armlink3" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_armlink4" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_camera" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="armroot_link" link2="up1_footprint" reason="Default" />
+    <disable_collisions link1="base_link" link2="io_link" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="left_armlink1" reason="Never" />
+    <disable_collisions link1="base_link" link2="left_armlink2" reason="Never" />
+    <disable_collisions link1="base_link" link2="left_armlink3" reason="Never" />
+    <disable_collisions link1="base_link" link2="left_armlink4" reason="Never" />
+    <disable_collisions link1="base_link" link2="left_back_wheel" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="left_camera" reason="Never" />
+    <disable_collisions link1="base_link" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="base_link" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="base_link" link2="left_front_wheel" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="base_link" link2="right_armlink1" reason="Never" />
+    <disable_collisions link1="base_link" link2="right_armlink2" reason="Never" />
+    <disable_collisions link1="base_link" link2="right_armlink3" reason="Never" />
+    <disable_collisions link1="base_link" link2="right_armlink4" reason="Never" />
+    <disable_collisions link1="base_link" link2="right_back_wheel" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="right_camera" reason="Never" />
+    <disable_collisions link1="base_link" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="base_link" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="base_link" link2="right_front_wheel" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="base_link" link2="up1_footprint" reason="Adjacent" />
+    <disable_collisions link1="io_link" link2="left_armlink1" reason="Never" />
+    <disable_collisions link1="io_link" link2="left_armlink2" reason="Never" />
+    <disable_collisions link1="io_link" link2="left_armlink3" reason="Never" />
+    <disable_collisions link1="io_link" link2="left_armlink4" reason="Never" />
+    <disable_collisions link1="io_link" link2="left_back_wheel" reason="Never" />
+    <disable_collisions link1="io_link" link2="left_camera" reason="Adjacent" />
+    <disable_collisions link1="io_link" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="io_link" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="io_link" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="io_link" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_armlink1" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_armlink2" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_armlink3" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_armlink4" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_camera" reason="Adjacent" />
+    <disable_collisions link1="io_link" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="io_link" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="io_link" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="left_armlink2" reason="Adjacent" />
+    <disable_collisions link1="left_armlink1" link2="left_armlink3" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="left_armlink4" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="left_back_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="left_camera" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="right_armlink1" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="right_armlink2" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="right_armlink3" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink1" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="left_armlink3" reason="Adjacent" />
+    <disable_collisions link1="left_armlink2" link2="left_armlink4" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="left_back_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="left_camera" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="right_armlink1" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="right_armlink2" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink2" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="left_armlink4" reason="Adjacent" />
+    <disable_collisions link1="left_armlink3" link2="left_back_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="left_camera" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="right_armlink1" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink3" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="left_back_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="left_camera" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="left_gripper" reason="Adjacent" />
+    <disable_collisions link1="left_armlink4" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_armlink4" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="left_camera" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_armlink1" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_armlink2" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_armlink3" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_armlink4" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="left_back_wheel" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_camera" link2="left_finger1" reason="Never" />
+    <disable_collisions link1="left_camera" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="left_camera" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="left_camera" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_armlink1" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_armlink2" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_armlink3" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_armlink4" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_camera" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="left_camera" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_finger1" link2="left_finger2" reason="Never" />
+    <disable_collisions link1="left_finger1" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="left_finger1" link2="left_gripper" reason="Adjacent" />
+    <disable_collisions link1="left_finger1" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_finger1" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_finger1" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_finger1" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_finger2" link2="left_front_wheel" reason="Never" />
+    <disable_collisions link1="left_finger2" link2="left_gripper" reason="Adjacent" />
+    <disable_collisions link1="left_finger2" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_finger2" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_finger2" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_finger2" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="left_gripper" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_armlink1" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_armlink2" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_armlink3" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_armlink4" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="left_front_wheel" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="left_gripper" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="left_gripper" link2="right_camera" reason="Never" />
+    <disable_collisions link1="left_gripper" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="left_gripper" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="right_armlink2" reason="Adjacent" />
+    <disable_collisions link1="right_armlink1" link2="right_armlink3" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="right_armlink4" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="right_camera" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="right_armlink1" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_armlink2" link2="right_armlink3" reason="Adjacent" />
+    <disable_collisions link1="right_armlink2" link2="right_armlink4" reason="Never" />
+    <disable_collisions link1="right_armlink2" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="right_armlink2" link2="right_camera" reason="Never" />
+    <disable_collisions link1="right_armlink2" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="right_armlink2" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="right_armlink2" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="right_armlink2" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="right_armlink2" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_armlink3" link2="right_armlink4" reason="Adjacent" />
+    <disable_collisions link1="right_armlink3" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="right_armlink3" link2="right_camera" reason="Never" />
+    <disable_collisions link1="right_armlink3" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="right_armlink3" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="right_armlink3" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="right_armlink3" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="right_armlink3" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_armlink4" link2="right_back_wheel" reason="Never" />
+    <disable_collisions link1="right_armlink4" link2="right_camera" reason="Never" />
+    <disable_collisions link1="right_armlink4" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="right_armlink4" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="right_armlink4" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="right_armlink4" link2="right_gripper" reason="Adjacent" />
+    <disable_collisions link1="right_armlink4" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_back_wheel" link2="right_camera" reason="Never" />
+    <disable_collisions link1="right_back_wheel" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="right_back_wheel" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="right_back_wheel" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="right_back_wheel" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_camera" link2="right_finger1" reason="Never" />
+    <disable_collisions link1="right_camera" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="right_camera" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="right_camera" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="right_camera" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_finger1" link2="right_finger2" reason="Never" />
+    <disable_collisions link1="right_finger1" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="right_finger1" link2="right_gripper" reason="Adjacent" />
+    <disable_collisions link1="right_finger1" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_finger2" link2="right_front_wheel" reason="Never" />
+    <disable_collisions link1="right_finger2" link2="right_gripper" reason="Adjacent" />
+    <disable_collisions link1="right_finger2" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_front_wheel" link2="right_gripper" reason="Never" />
+    <disable_collisions link1="right_front_wheel" link2="up1_footprint" reason="Never" />
+    <disable_collisions link1="right_gripper" link2="up1_footprint" reason="Never" />
+</robot>
