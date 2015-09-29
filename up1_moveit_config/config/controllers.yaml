@@ -1,0 +1,35 @@
+controller_list:
+  - name: right_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - right_armroot_to_armlink1
+      - right_armlink1_to_armlink2
+      - right_armlink2_to_armlink3
+      - right_armlink3_to_armlink4
+      - right_armlink4_to_gripper
+  - name: left_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - left_armroot_to_armlink1
+      - left_armlink1_to_armlink2
+      - left_armlink2_to_armlink3
+      - left_armlink3_to_armlink4
+      - left_armlink4_to_gripper
+  - name: right_gripper_controller
+    action_ns: gripper_action
+    type: GripperCommand
+    default: true
+    joints:
+      - right_finger_joint
+      - right_finger_joint_fake
+  - name: left_gripper_controller
+    action_ns: gripper_action
+    type: GripperCommand
+    default: true
+    joints:
+      - left_finger_joint
+      - left_finger_joint_fake
