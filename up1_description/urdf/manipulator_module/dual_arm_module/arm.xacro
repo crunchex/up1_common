@@ -124,16 +124,16 @@
     </link>
 
     <!-- Arm Joint 5 -->
-    <joint name="${prefix}_armlink4_to_armlink5" type="revolute">
+    <joint name="${prefix}_armlink4_to_gripper" type="revolute">
       <parent link="${prefix}_armlink4" />
-      <child link="${prefix}_armlink5" />
+      <child link="${prefix}_gripper" />
       <origin rpy="0 ${pi/2} 0"
         xyz="${armlink5_offset_x} ${armlink5_offset_y} ${armlink5_offset_z}" />
       <axis xyz="0 0 ${-reflect*1}" />
       <limit lower="${armlink5_limit_lower}" upper="${armlink5_limit_upper}" velocity="${armlink5_velocity}" effort="${armlink5_effort}" />
     </joint>
-    <!-- Arm Link 5 -->
-    <link name="${prefix}_armlink5">
+    <!-- Gripper Link -->
+    <link name="${prefix}_gripper">
       <visual>
         <geometry>
           <mesh filename="package://up1_description/meshes/dual_arm/armlink5.stl" scale="0.001 0.001 0.001" />
@@ -151,16 +151,6 @@
                  iyy="0.00007141374" iyz="0.00000015595" izz="0.0002397239"/>
       </inertial>
     </link>
-
-    <!-- Gripper Joint -->
-    <joint name="${prefix}_gripper" type="fixed">
-      <parent link="${prefix}_armlink5" />
-      <child link="${prefix}_gripper" />
-      <origin rpy="0 0 0"
-        xyz="${gripper_offset_x} ${gripper_offset_y} ${gripper_offset_z}" />
-    </joint>
-    <!-- Gripper -->
-    <link name="${prefix}_gripper" />
 
     <xacro:arm_gazebo prefix="${prefix}" />
     <xacro:arm_transmission prefix="${prefix}" />
