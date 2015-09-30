@@ -1,5 +1,5 @@
 <launch>
-   <node name="teleop_arm_joy" pkg="up1_teleop" type="teleop_arm_joy" output="screen">
-      <rosparam file="$(find up1_teleop)/config/arm_poses.yaml" command="load" />
+   <node name="teleop_arm_joy" pkg="up1_control" type="teleop_arm_joy" output="screen">
+      <rosparam file="$(find up1_control)/config/arm_poses.yaml" command="load" />
    </node>
 </launch>

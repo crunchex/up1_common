@@ -17,12 +17,12 @@
       <param name="gripper_width_deg" value="135.0"/>
    </node>
 
-   <node name="teleop_arm_joy" pkg="up1_teleop" type="teleop_arm_joy" output="screen">
-      <rosparam file="$(find up1_teleop)/config/arm_poses.yaml" command="load" />
+   <node name="teleop_arm_joy" pkg="up1_control" type="teleop_arm_joy" output="screen">
+      <rosparam file="$(find up1_control)/config/arm_poses.yaml" command="load" />
    </node>
 
    <arg name="joy_config" default="xbox" />
-   <node name="teleop_twist_joy" pkg="up1_teleop" type="teleop_twist_joy">
-     <rosparam command="load" file="$(find up1_teleop)/config/$(arg joy_config).config.yaml" />
+   <node name="teleop_twist_joy" pkg="up1_control" type="teleop_twist_joy">
+     <rosparam command="load" file="$(find up1_control)/config/$(arg joy_config).config.yaml" />
    </node>
 </launch>
