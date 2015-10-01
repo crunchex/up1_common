@@ -21,62 +21,6 @@
   <xacro:property name="camera_offset_y" value="0.04027" />
   <xacro:property name="camera_offset_z" value="0.00023" />
 
-  <xacro:property name="armroot_offset_x" value="-0.01247" />
-  <xacro:property name="armroot_offset_y" value="0" />
-  <xacro:property name="armroot_offset_z" value="0.05187" />
-
-  <xacro:property name="armlink1_offset_x" value="0.01777" />
-  <xacro:property name="armlink1_offset_y" value="0.07385" />
-  <xacro:property name="armlink1_offset_z" value="0.01853" />
-
-  <xacro:property name="armlink2_offset_x" value="0" />
-  <xacro:property name="armlink2_offset_y" value="0" />
-  <xacro:property name="armlink2_offset_z" value="-0.07038" />
-
-  <xacro:property name="armlink3_offset_x" value="0" />
-  <xacro:property name="armlink3_offset_y" value="0.09602" />
-  <xacro:property name="armlink3_offset_z" value="0" />
-
-  <xacro:property name="armlink4_offset_x" value="0" />
-  <xacro:property name="armlink4_offset_y" value="0" />
-  <xacro:property name="armlink4_offset_z" value="0.05588" />
-
-  <xacro:property name="gripper_offset_x" value="0" />
-  <xacro:property name="gripper_offset_y" value="0.07641" />
-  <xacro:property name="gripper_offset_z" value="0" />
-
-  <xacro:property name="finger_offset_x" value="0.01800" />
-  <xacro:property name="finger_offset_y" value="0.08121" />
-  <xacro:property name="finger_offset_z" value="0" />
-
-  <xacro:property name="armlink1_limit_lower" value="${-pi/2}" />
-  <xacro:property name="armlink1_limit_upper" value="${pi/2}" />
-  <xacro:property name="armlink2_limit_lower" value="${-pi/2}" />
-  <xacro:property name="armlink2_limit_upper" value="${pi/2}" />
-  <xacro:property name="armlink3_limit_lower" value="${-pi/2}" />
-  <xacro:property name="armlink3_limit_upper" value="${pi/2}" />
-  <xacro:property name="armlink4_limit_lower" value="${-pi/2}" />
-  <xacro:property name="armlink4_limit_upper" value="${pi/2}" />
-  <xacro:property name="gripper_limit_lower" value="${-pi/2}" />
-  <xacro:property name="gripper_limit_upper" value="${pi/2}" />
-  <xacro:property name="finger_limit_upper" value="0.018" />
-
-  <xacro:property name="armlink1_velocity" value="1" />
-  <xacro:property name="armlink2_velocity" value="1" />
-  <xacro:property name="armlink3_velocity" value="1" />
-  <xacro:property name="armlink4_velocity" value="1" />
-  <xacro:property name="gripper_velocity" value="1" />
-  <xacro:property name="finger1_velocity" value="1" />
-  <xacro:property name="finger2_velocity" value="1" />
-
-  <xacro:property name="armlink1_effort" value="6.0" />
-  <xacro:property name="armlink2_effort" value="6.0" />
-  <xacro:property name="armlink3_effort" value="6.0" />
-  <xacro:property name="armlink4_effort" value="6.0" />
-  <xacro:property name="gripper_effort" value="6.0" />
-  <xacro:property name="finger1_effort" value="6.0" />
-  <xacro:property name="finger2_effort" value="6.0" />
-
   <material name="black">
     <color rgba="0 0 0 1" />
   </material>
