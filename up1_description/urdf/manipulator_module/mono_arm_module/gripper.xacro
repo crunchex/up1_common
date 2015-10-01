@@ -1,14 +1,19 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
-  <xacro:include filename="$(find up1_description)/urdf/mono_arm_module/gripper.gazebo.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/mono_arm_module/gripper.gazebo.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/mono_arm_module/gripper.transmission.xacro" />
 
-  <!-- ============================   Gripper   ============================ -->
+  <xacro:property name="finger_offset_x" value="0.01800" />
+  <xacro:property name="finger_offset_y" value="0.08121" />
+  <xacro:property name="finger_offset_z" value="0" />
+
   <xacro:macro name="gripper" params="prefix reflect">
+    <!-- ============================   Gripper   ============================ -->
 
     <!-- Finger Joint 1 -->
-    <joint name="${prefix}_gripper_joint" type="prismatic">
-      <parent link="${prefix}_armlink5" />
+    <joint name="${prefix}_finger_joint" type="prismatic">
+      <parent link="${prefix}_gripper" />
       <child link="${prefix}_finger1" />
       <origin rpy="0 ${pi/2} 0"
         xyz="${-finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
@@ -36,14 +41,14 @@
     </link>
 
     <!-- Finger Joint 2 -->
-    <joint name="${prefix}_gripper_joint_fake" type="prismatic">
-      <parent link="${prefix}_armlink5" />
+    <joint name="${prefix}_finger_joint_fake" type="prismatic">
+      <parent link="${prefix}_gripper" />
       <child link="${prefix}_finger2" />
       <origin rpy="0 ${-pi/2} 0"
         xyz="${finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
       <axis xyz="0 0 1" />
       <limit lower="0" upper="${finger_limit_upper}" velocity="${finger2_velocity}" effort="${finger2_effort}" />
-      <mimic joint="${prefix}_gripper_joint" multiplier="1" offset="0"/>
+      <mimic joint="${prefix}_finger_joint" multiplier="1" offset="0"/>
     </joint>
     <!-- Finger Link 2 -->
     <link name="${prefix}_finger2">
@@ -66,6 +71,7 @@
     </link>
 
     <xacro:gripper_gazebo prefix="${prefix}" />
+    <xacro:gripper_transmission prefix="${prefix}" />
 
   </xacro:macro>
 
