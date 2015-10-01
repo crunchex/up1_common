@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
-  <xacro:property name="armroot_offset_z" value="0.08022" />
-  <xacro:property name="armroot_offset_x" value="-0.03804" />
-  <xacro:property name="armroot_offset_y" value="0.01963" />
+  <xacro:property name="armroot_offset_z" value="0.03876" />
+  <xacro:property name="armroot_offset_x" value="-0.00869" />
+  <xacro:property name="armroot_offset_y" value="0.0" />
 
   <xacro:macro name="arm_root_link">
     <!-- ============================   Arm Root Link   ============================ -->
