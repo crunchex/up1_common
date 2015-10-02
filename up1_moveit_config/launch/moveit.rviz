@@ -8,7 +8,7 @@ Panels:
         - /MotionPlanning1/Planning Request1
         - /MotionPlanning1/Planned Path1
       Splitter Ratio: 0.74256
-    Tree Height: 208
+    Tree Height: 415
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -41,7 +41,7 @@ Visualization Manager:
       Enabled: true
       Move Group Namespace: ""
       MoveIt_Goal_Tolerance: 0
-      MoveIt_Planning_Attempts: 10
+      MoveIt_Planning_Attempts: 1
       MoveIt_Planning_Time: 5
       MoveIt_Use_Constraint_Aware_IK: true
       MoveIt_Warehouse_Host: 127.0.0.1
@@ -89,11 +89,6 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          left_armlink5:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
           left_back_wheel:
             Alpha: 1
             Show Axes: false
@@ -123,6 +118,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           right_armlink1:
             Alpha: 1
             Show Axes: false
@@ -139,11 +135,6 @@ Visualization Manager:
             Show Trail: false
             Value: true
           right_armlink4:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          right_armlink5:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -177,6 +168,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           up1_footprint:
             Alpha: 1
             Show Axes: false
@@ -200,9 +192,9 @@ Visualization Manager:
         Colliding Link Color: 255; 0; 0
         Goal State Alpha: 1
         Goal State Color: 250; 128; 0
-        Interactive Marker Size: 0
+        Interactive Marker Size: 0.2
         Joint Violation Color: 255; 0; 255
-        Planning Group: arms_group
+        Planning Group: left_arm
         Query Goal State: true
         Query Start State: false
         Show Workspace: false
@@ -260,11 +252,6 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          left_armlink5:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
           left_back_wheel:
             Alpha: 1
             Show Axes: false
@@ -294,6 +281,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           right_armlink1:
             Alpha: 1
             Show Axes: false
@@ -310,11 +298,6 @@ Visualization Manager:
             Show Trail: false
             Value: true
           right_armlink4:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          right_armlink5:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -348,6 +331,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           up1_footprint:
             Alpha: 1
             Show Axes: false
@@ -372,7 +356,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 1.58135
+      Distance: 1.39159
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -384,24 +368,24 @@ Visualization Manager:
         Z: 2.23518e-07
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.374797
+      Pitch: 0.544797
       Target Frame: up1_footprint
       Value: XYOrbit (rviz)
-      Yaw: 0.731772
+      Yaw: 0.466784
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 832
+  Height: 773
   Help:
     collapsed: false
   Hide Left Dock: false
   Hide Right Dock: false
   Motion Planning:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002a2000002fcfc0200000005fb000000100044006900730070006c006100790073010000002800000110000000d000fffffffb0000000800480065006c00700000000342000000bb0000007000fffffffb0000000a0056006900650077007300000003b0000000b0000000a800fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067010000013e000001e60000019900ffffff0000020f000002fc00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002b1000002bffc0200000004fc00000028000002bf000001c90100001dfa000000000100000002fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000000ffffffff000002b100fffffffb000000100044006900730070006c0061007900730100000000000002b10000010f00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff0000016100000000000000000000021e000002bf00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
-  Width: 1207
-  X: 116
-  Y: 95
+  Width: 1237
+  X: 332
+  Y: 161

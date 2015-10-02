@@ -1,4 +1,5 @@
+<?xml version="1.0"?>
 <launch>
-   <include file="$(find up1_moveit_config)/launch/demo.launch" />
-   <node name="teleop_eef_joy" pkg="up1_teleop" type="teleop_eef_joy" output="screen" />
+  <include file="$(find up1_moveit_config)/launch/demo.launch" />
+  <node name="teleop_eef_joy" pkg="up1_control" type="teleop_eef_joy" output="screen" />
 </launch>

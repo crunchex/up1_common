@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- <node name="teleop_arm_joy" pkg="up1_control" type="teleop_arm_joy" output="screen">
+    <rosparam file="$(find up1_control)/config/arm_poses.yaml" command="load" />
+  </node> -->
+
+  <arg name="dev" default="/dev/input/js0" />
+
+  <!-- Launch joy node -->
+  <node pkg="joy" type="joy_node" name="joy">
+    <param name="dev" value="$(arg dev)" />
+    <param name="deadzone" value="0.2" />
+    <param name="autorepeat_rate" value="40" />
+    <param name="coalesce_interval" value="0.025" />
+  </node>
+
+  <!-- Twist (Base) -->
+  <arg name="joy_config" default="xbox" />
+  <node name="teleop_twist_joy" pkg="up1_control" type="teleop_twist_joy">
+   <rosparam command="load" file="$(find up1_control)/config/$(arg joy_config).config.yaml" />
+  </node>
+
+  <!-- MoveIt! (Manipulators) -->
+  <!-- <node pkg="up1_control" type="moveit_joy" output="screen" name="moveit_joy"/> -->
+</launch>
