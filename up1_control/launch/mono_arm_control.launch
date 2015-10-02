@@ -6,23 +6,20 @@
   <arg name="debug" default="false" />
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find up1_control)/config/control.yaml" command="load" />
+  <rosparam file="$(find up1_control)/config/mono_arm_control.yaml" command="load" />
 
   <!-- Load the controllers -->
   <!-- TODO: add this separate controller spawner for non-arm stuff like the base (twist) -->
   <node name="manipulator_controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="/up1"
-    args="--shutdown-timeout 3 left_gripper_controller left_gripper_fake_controller right_gripper_controller right_gripper_fake_controller left_arm_controller right_arm_controller" />
+    args="--shutdown-timeout 3 right_gripper_controller right_gripper_fake_controller right_arm_controller" />
 
   <!-- Remap follow_joint_trajectory -->
-  <remap if="$(arg sim)" from="/left_arm_controller/follow_joint_trajectory" to="/up1/left_arm_controller/follow_joint_trajectory" />
   <remap if="$(arg sim)" from="/right_arm_controller/follow_joint_trajectory" to="/up1/right_arm_controller/follow_joint_trajectory" />
-  <remap if="$(arg sim)" from="/left_gripper_controller/gripper_action" to="/up1/left_gripper_controller/gripper_cmd" />
   <remap if="$(arg sim)" from="/right_gripper_controller/gripper_action" to="/up1/right_gripper_controller/gripper_cmd" />
-  <remap if="$(arg sim)" from="/left_gripper_fake_controller/gripper_action" to="/up1/left_gripper_fake_controller/gripper_cmd" />
   <remap if="$(arg sim)" from="/right_gripper_fake_controller/gripper_action" to="/up1/right_gripper_fake_controller/gripper_cmd" />
 
   <!-- Launch moveit for arm -->
-  <include file="$(find up1_moveit_config)/launch/move_group.launch">
+  <include file="$(find up1_mono_moveit_config)/launch/move_group.launch">
     <arg name="debug" default="$(arg debug)" />
   </include>
 
