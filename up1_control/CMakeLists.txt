@@ -10,6 +10,7 @@ roslaunch_add_file_check(launch)
 
 catkin_install_python(PROGRAMS
   scripts/cmdr_joy
+  scripts/moveit_joy
   scripts/teleop_arm_joy
   scripts/teleop_arm_key
   scripts/teleop_eef_joy
