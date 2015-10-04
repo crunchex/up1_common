@@ -17,6 +17,10 @@
         <link name="right_finger1" />
         <link name="right_finger2" />
     </group>
+    <group name="gripper_group">
+        <joint name="right_finger_joint" />
+        <joint name="right_finger_joint_fake" />
+    </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="right_straight" group="right_arm">
         <joint name="right_armlink1_to_armlink2" value="0" />
@@ -24,6 +28,38 @@
         <joint name="right_armlink3_to_armlink4" value="0" />
         <joint name="right_armlink4_to_gripper" value="0" />
         <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="gripper_open" group="gripper_group">
+        <joint name="right_finger_joint" value="0" />
+        <joint name="right_finger_joint_fake" value="0" />
+    </group_state>
+    <group_state name="gripper_close_140" group="gripper_group">
+        <joint name="right_finger_joint" value="0.014" />
+        <joint name="right_finger_joint_fake" value="0.014" />
+    </group_state>
+    <group_state name="gripper_close_120" group="gripper_group">
+        <joint name="right_finger_joint" value="0.012" />
+        <joint name="right_finger_joint_fake" value="0.012" />
+    </group_state>
+    <group_state name="gripper_close_100" group="gripper_group">
+        <joint name="right_finger_joint" value="0.01" />
+        <joint name="right_finger_joint_fake" value="0.01" />
+    </group_state>
+    <group_state name="gripper_close_80" group="gripper_group">
+        <joint name="right_finger_joint" value="0.008" />
+        <joint name="right_finger_joint_fake" value="0.008" />
+    </group_state>
+    <group_state name="gripper_close_60" group="gripper_group">
+        <joint name="right_finger_joint" value="0.006" />
+        <joint name="right_finger_joint_fake" value="0.006" />
+    </group_state>
+    <group_state name="gripper_close_40" group="gripper_group">
+        <joint name="right_finger_joint" value="0.004" />
+        <joint name="right_finger_joint_fake" value="0.004" />
+    </group_state>
+    <group_state name="gripper_close_20" group="gripper_group">
+        <joint name="right_finger_joint" value="0.002" />
+        <joint name="right_finger_joint_fake" value="0.002" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="right_eef" parent_link="right_gripper" group="right_gripper" />
