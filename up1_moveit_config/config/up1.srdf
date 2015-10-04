@@ -25,6 +25,14 @@
         <link name="right_finger2" />
         <link name="right_gripper" />
     </group>
+    <group name="left_gripper_group">
+        <joint name="left_finger_joint" />
+        <joint name="left_finger_joint_fake" />
+    </group>
+    <group name="right_gripper_group">
+        <joint name="right_finger_joint" />
+        <joint name="right_finger_joint_fake" />
+    </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="left_straight" group="left_arm">
         <joint name="left_armlink1_to_armlink2" value="0" />
@@ -96,11 +104,86 @@
         <joint name="right_armlink4_to_gripper" value="0" />
         <joint name="right_armroot_to_armlink1" value="0" />
     </group_state>
+    <group_state name="left_paint" group="left_arm">
+        <joint name="left_armlink1_to_armlink2" value="1.5178" />
+        <joint name="left_armlink2_to_armlink3" value="-1.0942" />
+        <joint name="left_armlink3_to_armlink4" value="-1.1118" />
+        <joint name="left_armlink4_to_gripper" value="0" />
+        <joint name="left_armroot_to_armlink1" value="0.353" />
+    </group_state>
+    <group_state name="right_paint" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-1.5178" />
+        <joint name="right_armlink2_to_armlink3" value="1.0942" />
+        <joint name="right_armlink3_to_armlink4" value="1.1117" />
+        <joint name="right_armlink4_to_gripper" value="0" />
+        <joint name="right_armroot_to_armlink1" value="-0.353" />
+    </group_state>
+    <group_state name="right_gripper_close_140" group="right_gripper_group">
+        <joint name="right_finger_joint" value="0.014" />
+        <joint name="right_finger_joint_fake" value="0.014" />
+    </group_state>
+    <group_state name="right_gripper_close_120" group="right_gripper_group">
+        <joint name="right_finger_joint" value="0.012" />
+        <joint name="right_finger_joint_fake" value="0.012" />
+    </group_state>
+    <group_state name="right_gripper_close_100" group="right_gripper_group">
+        <joint name="right_finger_joint" value="0.01" />
+        <joint name="right_finger_joint_fake" value="0.01" />
+    </group_state>
+    <group_state name="right_gripper_close_80" group="right_gripper_group">
+        <joint name="right_finger_joint" value="0.008" />
+        <joint name="right_finger_joint_fake" value="0.008" />
+    </group_state>
+    <group_state name="right_gripper_close_60" group="right_gripper_group">
+        <joint name="right_finger_joint" value="0.006" />
+        <joint name="right_finger_joint_fake" value="0.006" />
+    </group_state>
+    <group_state name="right_gripper_close_40" group="right_gripper_group">
+        <joint name="right_finger_joint" value="0.004" />
+        <joint name="right_finger_joint_fake" value="0.004" />
+    </group_state>
+    <group_state name="right_gripper_close_20" group="right_gripper_group">
+        <joint name="right_finger_joint" value="0.002" />
+        <joint name="right_finger_joint_fake" value="0.002" />
+    </group_state>
+    <group_state name="left_gripper_close_140" group="left_gripper_group">
+        <joint name="left_finger_joint" value="0.014" />
+        <joint name="left_finger_joint_fake" value="0.014" />
+    </group_state>
+    <group_state name="left_gripper_close_120" group="left_gripper_group">
+        <joint name="left_finger_joint" value="0.012" />
+        <joint name="left_finger_joint_fake" value="0.012" />
+    </group_state>
+    <group_state name="left_gripper_close_100" group="left_gripper_group">
+        <joint name="left_finger_joint" value="0.01" />
+        <joint name="left_finger_joint_fake" value="0.01" />
+    </group_state>
+    <group_state name="left_gripper_close_80" group="left_gripper_group">
+        <joint name="left_finger_joint" value="0.008" />
+        <joint name="left_finger_joint_fake" value="0.008" />
+    </group_state>
+    <group_state name="left_gripper_close_60" group="left_gripper_group">
+        <joint name="left_finger_joint" value="0.006" />
+        <joint name="left_finger_joint_fake" value="0.006" />
+    </group_state>
+    <group_state name="left_gripper_close_40" group="left_gripper_group">
+        <joint name="left_finger_joint" value="0.004" />
+        <joint name="left_finger_joint_fake" value="0.004" />
+    </group_state>
+    <group_state name="left_gripper_close_20" group="left_gripper_group">
+        <joint name="left_finger_joint" value="0.002" />
+        <joint name="left_finger_joint_fake" value="0.002" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="left_eef" parent_link="left_gripper" group="left_gripper" />
     <end_effector name="right_eef" parent_link="right_gripper" group="right_gripper" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="planar" parent_frame="odom_combined" child_link="up1_footprint" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="base_to_left_back_wheel" />
+    <passive_joint name="base_to_left_front_wheel" />
+    <passive_joint name="base_to_right_back_wheel" />
+    <passive_joint name="base_to_right_front_wheel" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="armroot_link" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="armroot_link" link2="io_link" reason="Never" />
