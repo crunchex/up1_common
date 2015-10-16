@@ -9,10 +9,10 @@ controller_list:
       - right_armlink2_to_armlink3
       - right_armlink3_to_armlink4
       - right_armlink4_to_gripper
-  - name: right_gripper_controller
-    action_ns: gripper_action
-    type: GripperCommand
-    default: true
-    joints:
-      - right_finger_joint
-      - right_finger_joint_fake
+  # - name: right_gripper_controller
+  #   action_ns: gripper_action
+  #   type: GripperCommand
+  #   default: true
+  #   joints:
+  #     - right_finger_joint
+  #     - right_finger_joint_fake

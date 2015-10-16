@@ -16,6 +16,18 @@
         <link name="right_gripper" />
         <link name="right_finger1" />
         <link name="right_finger2" />
+        <joint name="right_finger_joint" />
+        <joint name="right_finger_joint_fake" />
+    </group>
+    <group name="right_finger1">
+        <joint name="right_finger_joint" />
+    </group>
+    <group name="right_finger2">
+        <chain base_link="right_gripper" tip_link="right_finger2" />
+    </group>
+    <group name="right_fingers">
+        <joint name="right_finger_joint" />
+        <joint name="right_finger_joint_fake" />
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="right_straight" group="right_arm">
@@ -27,6 +39,9 @@
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="right_eef" parent_link="right_gripper" group="right_gripper" />
+    <end_effector name="right_finger1" parent_link="right_gripper" group="right_finger1" />
+    <end_effector name="right_finger2" parent_link="right_gripper" group="right_finger2" />
+    <end_effector name="right_fingers" parent_link="right_gripper" group="right_fingers" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="planar" parent_frame="odom_combined" child_link="up1_footprint" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
