@@ -53,6 +53,34 @@
         <joint name="right_armlink4_to_gripper" value="0" />
         <joint name="right_armroot_to_armlink1" value="0" />
     </group_state>
+    <group_state name="right_chess_pick" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-1.5707" />
+        <joint name="right_armlink2_to_armlink3" value="-1.4295" />
+        <joint name="right_armlink3_to_armlink4" value="1.5707" />
+        <joint name="right_armlink4_to_gripper" value="1.4472" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="right_chess_pick_up" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-0.7765" />
+        <joint name="right_armlink2_to_armlink3" value="-1.5707" />
+        <joint name="right_armlink3_to_armlink4" value="1.5707" />
+        <joint name="right_armlink4_to_gripper" value="1.5707" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="right_chess_place_forward" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-0.9001" />
+        <joint name="right_armlink2_to_armlink3" value="-1.5707" />
+        <joint name="right_armlink3_to_armlink4" value="1.1118" />
+        <joint name="right_armlink4_to_gripper" value="1.5707" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="right_chess_place" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-1.4295" />
+        <joint name="right_armlink2_to_armlink3" value="-1.1648" />
+        <joint name="right_armlink3_to_armlink4" value="0.8824" />
+        <joint name="right_armlink4_to_gripper" value="1.1118" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="right_eef" parent_link="right_gripper" group="right_gripper" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
