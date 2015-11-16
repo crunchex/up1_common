@@ -72,14 +72,14 @@
         <joint name="right_armlink2_to_armlink3" value="-1.5707" />
         <joint name="right_armlink3_to_armlink4" value="1.1118" />
         <joint name="right_armlink4_to_gripper" value="1.5707" />
-        <joint name="right_armroot_to_armlink1" value="0" />
+        <joint name="right_armroot_to_armlink1" value="0.1588" />
     </group_state>
     <group_state name="right_chess_place" group="right_arm">
         <joint name="right_armlink1_to_armlink2" value="-1.4295" />
         <joint name="right_armlink2_to_armlink3" value="-1.1648" />
         <joint name="right_armlink3_to_armlink4" value="0.8824" />
         <joint name="right_armlink4_to_gripper" value="1.1118" />
-        <joint name="right_armroot_to_armlink1" value="0" />
+        <joint name="right_armroot_to_armlink1" value="0.1588" />
     </group_state>
     <group_state name="right_place_left" group="right_arm">
         <joint name="right_armlink1_to_armlink2" value="-1.5707" />
