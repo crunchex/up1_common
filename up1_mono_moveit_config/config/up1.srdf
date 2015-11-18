@@ -33,7 +33,7 @@
         <joint name="right_armroot_to_armlink1" value="0" />
     </group_state>
     <group_state name="right_pick" group="right_arm">
-        <joint name="right_armlink1_to_armlink2" value="-1.4648" />
+        <joint name="right_armlink1_to_armlink2" value="-1.2883" />
         <joint name="right_armlink2_to_armlink3" value="0" />
         <joint name="right_armlink3_to_armlink4" value="0.9883" />
         <joint name="right_armlink4_to_gripper" value="0" />
@@ -53,7 +53,63 @@
         <joint name="right_armlink4_to_gripper" value="0" />
         <joint name="right_armroot_to_armlink1" value="0" />
     </group_state>
-    <group_state name="right_back" group="right_arm">
+    <group_state name="right_chess_pick" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-1.5707" />
+        <joint name="right_armlink2_to_armlink3" value="-1.4295" />
+        <joint name="right_armlink3_to_armlink4" value="1.5707" />
+        <joint name="right_armlink4_to_gripper" value="1.4472" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="right_chess_pick_up" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-0.7765" />
+        <joint name="right_armlink2_to_armlink3" value="-1.5707" />
+        <joint name="right_armlink3_to_armlink4" value="1.5707" />
+        <joint name="right_armlink4_to_gripper" value="1.5707" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="right_chess_place_forward" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-0.9001" />
+        <joint name="right_armlink2_to_armlink3" value="-1.5707" />
+        <joint name="right_armlink3_to_armlink4" value="1.1118" />
+        <joint name="right_armlink4_to_gripper" value="1.5707" />
+        <joint name="right_armroot_to_armlink1" value="0.1588" />
+    </group_state>
+    <group_state name="right_chess_place" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-1.4295" />
+        <joint name="right_armlink2_to_armlink3" value="-1.1648" />
+        <joint name="right_armlink3_to_armlink4" value="0.8824" />
+        <joint name="right_armlink4_to_gripper" value="1.1118" />
+        <joint name="right_armroot_to_armlink1" value="0.1588" />
+    </group_state>
+    <group_state name="right_place_left" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-1.5707" />
+        <joint name="right_armlink2_to_armlink3" value="-1.1471" />
+        <joint name="right_armlink3_to_armlink4" value="1.3236" />
+        <joint name="right_armlink4_to_gripper" value="1.1118" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="right_place_right" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-1.5707" />
+        <joint name="right_armlink2_to_armlink3" value="1.1471" />
+        <joint name="right_armlink3_to_armlink4" value="1.4295" />
+        <joint name="right_armlink4_to_gripper" value="-1.1117" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="right_place_center" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-1.5707" />
+        <joint name="right_armlink2_to_armlink3" value="-1.1417" />
+        <joint name="right_armlink3_to_armlink4" value="1.5707" />
+        <joint name="right_armlink4_to_gripper" value="1.1117" />
+        <joint name="right_armroot_to_armlink1" value="0.4412" />
+    </group_state>
+    <group_state name="right_place_mid" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="-0.6883" />
+        <joint name="right_armlink2_to_armlink3" value="0" />
+        <joint name="right_armlink3_to_armlink4" value="-0.8118" />
+        <joint name="right_armlink4_to_gripper" value="0" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+	<group_state name="right_back" group="right_arm">
         <joint name="right_armlink1_to_armlink2" value="1.5707" />
         <joint name="right_armlink2_to_armlink3" value="0" />
         <joint name="right_armlink3_to_armlink4" value="-0.8118" />

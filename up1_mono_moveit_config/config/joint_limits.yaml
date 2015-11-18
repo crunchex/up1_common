@@ -4,27 +4,27 @@
 joint_limits:
   right_armlink1_to_armlink2:
     has_velocity_limits: true
-    max_velocity: 1
+    max_velocity: 5.236
     has_acceleration_limits: false
     max_acceleration: 0
   right_armlink2_to_armlink3:
     has_velocity_limits: true
-    max_velocity: 1
+    max_velocity: 4.553
     has_acceleration_limits: false
     max_acceleration: 0
   right_armlink3_to_armlink4:
     has_velocity_limits: true
-    max_velocity: 1
+    max_velocity: 5.236
     has_acceleration_limits: false
     max_acceleration: 0
   right_armlink4_to_gripper:
     has_velocity_limits: true
-    max_velocity: 1
+    max_velocity: 5.236
     has_acceleration_limits: false
     max_acceleration: 0
   right_armroot_to_armlink1:
     has_velocity_limits: true
-    max_velocity: 1
+    max_velocity: 5.236
     has_acceleration_limits: false
     max_acceleration: 0
   right_finger_joint:
