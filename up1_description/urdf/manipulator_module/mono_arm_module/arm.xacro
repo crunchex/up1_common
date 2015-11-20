@@ -68,13 +68,13 @@
     <link name="${prefix}_armlink1">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink1.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink1.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink1.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink1.dae" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -97,13 +97,13 @@
     <link name="${prefix}_armlink2">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink2.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink2.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink2.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink2.dae" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -126,13 +126,13 @@
     <link name="${prefix}_armlink3">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink3.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink3.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink3.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink3.dae" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -155,13 +155,13 @@
     <link name="${prefix}_armlink4">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink4.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink4.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink4.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink4.dae" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -184,13 +184,13 @@
     <link name="${prefix}_gripper">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink5.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink5.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="white" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink5.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink5.dae" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>

@@ -36,13 +36,13 @@
     <link name="base_link">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/base.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/base.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="grey" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/base.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/base.dae" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
