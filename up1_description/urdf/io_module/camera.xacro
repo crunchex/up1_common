@@ -3,7 +3,7 @@
 
   <xacro:macro name="camera" params="prefix reflect">
     <!-- ============================   Camera   ============================ -->
-    
+
     <!-- Camera Joint -->
     <joint name="io_to_${prefix}_camera" type="fixed">
       <parent link="io_link" />
@@ -14,13 +14,13 @@
     <link name="${prefix}_camera">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/io/camera.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/io/camera.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="black" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/io/camera.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/io/camera.dae" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
