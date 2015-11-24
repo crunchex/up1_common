@@ -24,7 +24,7 @@
     <link name="${prefix}_finger1">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/finger.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/finger_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="grey" />
       </visual>
@@ -54,7 +54,7 @@
     <link name="${prefix}_finger2">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/finger.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/finger_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="grey" />
       </visual>

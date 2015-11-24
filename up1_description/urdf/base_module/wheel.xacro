@@ -16,7 +16,7 @@
     <link name="${prefix}_front_wheel">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/wheel.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="black" />
       </visual>
@@ -44,7 +44,7 @@
     <link name="${prefix}_back_wheel">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/wheel.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="black" />
       </visual>

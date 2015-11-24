@@ -48,16 +48,14 @@
       <material name="white"/>
     </visual>
     <collision>
-      <!-- represent base collision with a simple rectangular model, positioned by base_size_z s.t. top
-             surface of the collision box matches the top surface of the PR2 base -->
-      <origin rpy="0 0 0" xyz="0 0 0.071"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <box size="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
   <joint name="up1_footprint_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.051"/>
+    <origin rpy="0 0 0" xyz="0 0 0.06016"/>
     <child link="base_link"/>
     <parent link="up1_footprint"/>
   </joint>
@@ -65,7 +63,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/base.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/base_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -108,7 +106,7 @@
   <link name="right_front_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -133,7 +131,7 @@
   <link name="right_back_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -159,7 +157,7 @@
   <link name="left_front_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -184,7 +182,7 @@
   <link name="left_back_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -209,7 +207,7 @@
   <link name="io_link">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/io/io.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/io/io_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -232,13 +230,13 @@
   <joint name="io_to_right_camera" type="fixed">
     <parent link="io_link"/>
     <child link="right_camera"/>
-    <origin xyz="-0.01219 -0.04027 0.00023"/>
+    <origin rpy="0 0.209439333333 0" xyz="-0.00619 -0.02127 0.00451"/>
   </joint>
   <!-- Camera Link -->
   <link name="right_camera">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/io/camera.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/io/camera_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -257,13 +255,13 @@
   <joint name="io_to_left_camera" type="fixed">
     <parent link="io_link"/>
     <child link="left_camera"/>
-    <origin xyz="-0.01219 0.04027 0.00023"/>
+    <origin rpy="0 0.209439333333 0" xyz="-0.00619 0.02127 0.00451"/>
   </joint>
   <!-- Camera Link -->
   <link name="left_camera">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/io/camera.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/io/camera_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -290,7 +288,7 @@
   <link name="armroot_link">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/armroot.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/armroot_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -317,7 +315,7 @@
   <link name="right_armlink1">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/armlink1.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/armlink1_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -343,7 +341,7 @@
   <link name="right_armlink2">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/armlink2.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/armlink2_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -369,7 +367,7 @@
   <link name="right_armlink3">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/armlink3.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/armlink3_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -395,7 +393,7 @@
   <link name="right_armlink4">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/armlink4.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/armlink4_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -421,7 +419,7 @@
   <link name="right_gripper">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/armlink5.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/armlink5_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -510,7 +508,7 @@
   <link name="right_finger1">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/finger.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/finger_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -537,7 +535,7 @@
   <link name="right_finger2">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/finger.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/finger_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>

@@ -18,16 +18,14 @@
         <material name="white" />
       </visual>
       <collision>
-        <!-- represent base collision with a simple rectangular model, positioned by base_size_z s.t. top
-             surface of the collision box matches the top surface of the PR2 base -->
-        <origin xyz="0 0 ${0.051+0.04/2}" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <box size="0.001 0.001 0.001" />
         </geometry>
       </collision>
     </link>
     <joint name="up1_footprint_joint" type="fixed">
-      <origin xyz="0 0 0.051" rpy="0 0 0" />
+      <origin xyz="0 0 0.06016" rpy="0 0 0" />
       <child link="base_link" />
       <parent link="up1_footprint"/>
     </joint>
@@ -36,7 +34,7 @@
     <link name="base_link">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/base.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/base_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="grey" />
       </visual>

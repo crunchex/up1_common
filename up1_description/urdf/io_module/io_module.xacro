@@ -17,7 +17,7 @@
     <link name="io_link">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/io/io.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/io/io_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="grey" />
       </visual>

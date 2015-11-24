@@ -8,13 +8,13 @@
     <joint name="io_to_${prefix}_camera" type="fixed">
       <parent link="io_link" />
       <child link="${prefix}_camera" />
-      <origin xyz="${camera_offset_x} ${-reflect*camera_offset_y} ${camera_offset_z}" />
+      <origin xyz="${camera_offset_x} ${-reflect*camera_offset_y} ${camera_offset_z}" rpy="0 ${pi/15} 0"/>
     </joint>
     <!-- Camera Link -->
     <link name="${prefix}_camera">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/io/camera.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/io/camera_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="black" />
       </visual>
