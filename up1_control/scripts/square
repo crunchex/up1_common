@@ -17,7 +17,7 @@ class DriveSquare:
         while not rospy.is_shutdown():
             # forward
             twist = Twist()
-            twist.linearate.x = 0.15
+            twist.linear.x = 0.15
             # 10*5hz = 2sec
             for i in range(10):
                 self.pub.publish(twist)
@@ -26,7 +26,7 @@ class DriveSquare:
             # turn
             twist = Twist()
             # 45 deg/s * 2sec = 90 degrees
-            twist.angularate.z = 1.57 / 2
+            twist.angular.z = 1.57 / 2
             # 10*5hz = 2sec
             for i in range(10):
                 self.pub.publish(twist)
