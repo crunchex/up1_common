@@ -65,7 +65,6 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/base/base_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey"/>
     </visual>
     <collision>
       <geometry>
@@ -108,7 +107,6 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -159,7 +157,6 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -230,7 +227,7 @@
   <joint name="io_to_right_camera" type="fixed">
     <parent link="io_link"/>
     <child link="right_camera"/>
-    <origin rpy="0 0.209439333333 0" xyz="-0.00619 -0.02127 0.00451"/>
+    <origin rpy="0 0.209439333333 0" xyz="-0.00519 -0.02127 0.00451"/>
   </joint>
   <!-- Camera Link -->
   <link name="right_camera">
@@ -238,7 +235,6 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/io/camera_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -255,7 +251,7 @@
   <joint name="io_to_left_camera" type="fixed">
     <parent link="io_link"/>
     <child link="left_camera"/>
-    <origin rpy="0 0.209439333333 0" xyz="-0.00619 0.02127 0.00451"/>
+    <origin rpy="0 0.209439333333 0" xyz="-0.00519 0.02127 0.00451"/>
   </joint>
   <!-- Camera Link -->
   <link name="left_camera">
@@ -263,7 +259,6 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/io/camera_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -359,7 +354,7 @@
   <joint name="right_armlink2_to_armlink3" type="revolute">
     <parent link="right_armlink2"/>
     <child link="right_armlink3"/>
-    <origin rpy="-1.570795 3.14159 0" xyz="0 0.09602 0"/>
+    <origin rpy="-1.570795 3.14159 0" xyz="0 0.10602 0"/>
     <axis xyz="0 0 -1"/>
     <limit effort="6.0" lower="-1.570795" upper="1.570795" velocity="5.236"/>
   </joint>

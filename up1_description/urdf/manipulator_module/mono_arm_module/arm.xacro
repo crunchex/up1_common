@@ -13,7 +13,7 @@
   <xacro:property name="armlink2_offset_z" value="-0.0553" />
 
   <xacro:property name="armlink3_offset_x" value="0" />
-  <xacro:property name="armlink3_offset_y" value="0.09602" />
+  <xacro:property name="armlink3_offset_y" value="0.10602" />
   <xacro:property name="armlink3_offset_z" value="0" />
 
   <xacro:property name="armlink4_offset_x" value="0" />

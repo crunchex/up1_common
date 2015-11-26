@@ -16,7 +16,6 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/io/camera_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="black" />
       </visual>
       <collision>
         <geometry>

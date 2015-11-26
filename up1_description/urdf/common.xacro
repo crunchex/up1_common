@@ -17,7 +17,7 @@
   <xacro:property name="io_offset_y" value="0" />
   <xacro:property name="io_offset_z" value="0.03356" />
 
-  <xacro:property name="camera_offset_x" value="-0.00619" />
+  <xacro:property name="camera_offset_x" value="-0.00519" />
   <xacro:property name="camera_offset_y" value="0.02127" />
   <xacro:property name="camera_offset_z" value="0.00451" />
 
