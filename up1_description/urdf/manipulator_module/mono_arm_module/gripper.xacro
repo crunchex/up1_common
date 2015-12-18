@@ -4,9 +4,9 @@
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/mono_arm_module/gripper.gazebo.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/mono_arm_module/gripper.transmission.xacro" />
 
-  <xacro:property name="finger_offset_x" value="0.01800" />
-  <xacro:property name="finger_offset_y" value="0.08121" />
-  <xacro:property name="finger_offset_z" value="0" />
+  <xacro:property name="finger_offset_x" value="0.0" />
+  <xacro:property name="finger_offset_y" value="0.0" />
+  <xacro:property name="finger_offset_z" value="0.07961" />
 
   <xacro:macro name="gripper" params="prefix reflect">
     <!-- ============================   Gripper   ============================ -->
@@ -15,9 +15,9 @@
     <joint name="${prefix}_finger_joint" type="prismatic">
       <parent link="${prefix}_gripper" />
       <child link="${prefix}_finger1" />
-      <origin rpy="0 ${pi/2} 0"
+      <origin rpy="0 0 0"
         xyz="${-finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
-      <axis xyz="0 0 1" />
+      <axis xyz="0 1 0" />
       <limit lower="0" upper="${finger_limit_upper}" velocity="${finger1_velocity}" effort="${finger1_effort}" />
     </joint>
     <!-- Finger Link 1 -->
@@ -30,7 +30,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/finger.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/finger_left.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -44,9 +44,9 @@
     <joint name="${prefix}_finger_joint_fake" type="prismatic">
       <parent link="${prefix}_gripper" />
       <child link="${prefix}_finger2" />
-      <origin rpy="0 ${-pi/2} 0"
+      <origin rpy="0 0 ${pi}"
         xyz="${finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
-      <axis xyz="0 0 1" />
+      <axis xyz="0 1 0" />
       <limit lower="0" upper="${finger_limit_upper}" velocity="${finger2_velocity}" effort="${finger2_effort}" />
       <mimic joint="${prefix}_finger_joint" multiplier="1" offset="0"/>
     </joint>
@@ -60,7 +60,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/finger.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/finger_left.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>

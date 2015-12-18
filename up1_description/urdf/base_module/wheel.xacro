@@ -8,9 +8,9 @@
     <joint name="base_to_${prefix}_front_wheel" type="continuous">
       <parent link="base_link" />
       <child link="${prefix}_front_wheel" />
-      <origin rpy="${reflect*pi/2} 0 0"
-          xyz="${front_wheel_offset_x} ${-reflect*front_wheel_offset_y} ${front_wheel_offset_z}" />
-      <axis xyz="0 0 ${-reflect*1}" />
+      <origin rpy="0 0 0"
+          xyz="${front_wheel_offset_x} ${reflect*front_wheel_offset_y} ${front_wheel_offset_z}" />
+      <axis xyz="0 1 0" />
     </joint>
     <!-- Front Wheel Link -->
     <link name="${prefix}_front_wheel">
@@ -21,7 +21,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/wheel.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/wheel_left.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -35,9 +35,9 @@
     <joint name="base_to_${prefix}_back_wheel" type="continuous">
       <parent link="base_link" />
       <child link="${prefix}_back_wheel" />
-      <origin rpy="${reflect*pi/2} 0 0"
-          xyz="${back_wheel_offset_x} ${-reflect*back_wheel_offset_y} ${back_wheel_offset_z}" />
-      <axis xyz="0 0 ${-reflect*1}" />
+      <origin rpy="0 0 0"
+          xyz="${back_wheel_offset_x} ${reflect*back_wheel_offset_y} ${back_wheel_offset_z}" />
+      <axis xyz="0 1 0" />
     </joint>
     <!-- Back Wheel Link -->
     <link name="${prefix}_back_wheel">
@@ -49,7 +49,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/wheel.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/wheel_left.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>

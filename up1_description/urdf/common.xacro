@@ -5,21 +5,21 @@
 
   <xacro:property name="pi" value="3.14159" />
 
-  <xacro:property name="front_wheel_offset_x" value="0.05569" />
-  <xacro:property name="front_wheel_offset_y" value="0.12922" />
-  <xacro:property name="front_wheel_offset_z" value="-0.02110" />
+  <xacro:property name="front_wheel_offset_x" value="0.05605" />
+  <xacro:property name="front_wheel_offset_y" value="0.12005" />
+  <xacro:property name="front_wheel_offset_z" value="-0.02016" />
 
-  <xacro:property name="back_wheel_offset_x" value="-0.05883" />
-  <xacro:property name="back_wheel_offset_y" value="0.12922" />
-  <xacro:property name="back_wheel_offset_z" value="-0.02110" />
+  <xacro:property name="back_wheel_offset_x" value="-0.05848" />
+  <xacro:property name="back_wheel_offset_y" value="0.12005" />
+  <xacro:property name="back_wheel_offset_z" value="-0.02016" />
 
-  <xacro:property name="io_offset_x" value="0.09136" />
-  <xacro:property name="io_offset_y" value="0" />
-  <xacro:property name="io_offset_z" value="0.03356" />
+  <xacro:property name="io_offset_x" value="0.09184" />
+  <xacro:property name="io_offset_y" value="0.0" />
+  <xacro:property name="io_offset_z" value="0.03465" />
 
-  <xacro:property name="camera_offset_x" value="-0.00519" />
-  <xacro:property name="camera_offset_y" value="0.02127" />
-  <xacro:property name="camera_offset_z" value="0.00451" />
+  <xacro:property name="camera_offset_y" value="0.02150" />
+  <xacro:property name="camera_offset_z" value="0.00476" />
+  <xacro:property name="camera_offset_x" value="-0.00751" />
 
   <material name="black">
     <color rgba="0 0 0 1" />

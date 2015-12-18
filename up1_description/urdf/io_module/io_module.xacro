@@ -23,7 +23,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/io/io.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/io/io.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
