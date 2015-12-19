@@ -1,27 +1,32 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
-  <xacro:macro name="wheel" params="prefix reflect">
+  <xacro:property name="front_wheel_offset_x" value="0.05605" />
+  <xacro:property name="back_wheel_offset_x" value="0.05848" />
+
+  <xacro:property name="wheel_offset_y" value="0.12005" />
+  <xacro:property name="wheel_offset_z" value="0.02016" />
+
+  <xacro:macro name="wheel" params="prefix">
     <!-- ============================   Wheel   ============================ -->
 
-    <!-- Front Wheel Joint -->
+    <!-- Wheel Joint -->
     <joint name="base_to_${prefix}_front_wheel" type="continuous">
       <parent link="base_link" />
       <child link="${prefix}_front_wheel" />
-      <origin rpy="0 0 0"
-          xyz="${front_wheel_offset_x} ${reflect*front_wheel_offset_y} ${front_wheel_offset_z}" />
+      <origin rpy="0 0 0" xyz="${front_wheel_offset_x} ${wheel_offset_y} -${wheel_offset_z}" />
       <axis xyz="0 1 0" />
     </joint>
     <!-- Front Wheel Link -->
     <link name="${prefix}_front_wheel">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/wheel_${prefix}_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/wheel_left.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/wheel_${prefix}.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -31,25 +36,22 @@
       </inertial>
     </link>
 
-    <!-- Back Wheel Joint -->
     <joint name="base_to_${prefix}_back_wheel" type="continuous">
       <parent link="base_link" />
       <child link="${prefix}_back_wheel" />
-      <origin rpy="0 0 0"
-          xyz="${back_wheel_offset_x} ${reflect*back_wheel_offset_y} ${back_wheel_offset_z}" />
+      <origin rpy="0 0 0" xyz="-${back_wheel_offset_x} ${wheel_offset_y} -${wheel_offset_z}" />
       <axis xyz="0 1 0" />
     </joint>
-    <!-- Back Wheel Link -->
+    <!-- Front Wheel Link -->
     <link name="${prefix}_back_wheel">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/wheel_${prefix}_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="black" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/base/wheel_left.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/base/wheel_${prefix}.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>

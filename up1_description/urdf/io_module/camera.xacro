@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
+  <xacro:property name="camera_offset_y" value="0.02150" />
+  <xacro:property name="camera_offset_z" value="0.00476" />
+  <xacro:property name="camera_offset_x" value="-0.00751" />
+
   <xacro:macro name="camera" params="prefix reflect">
     <!-- ============================   Camera   ============================ -->
 

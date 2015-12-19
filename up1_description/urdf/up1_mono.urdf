@@ -55,7 +55,7 @@
     </collision>
   </link>
   <joint name="up1_footprint_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.06016"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
     <child link="base_link"/>
     <parent link="up1_footprint"/>
   </joint>
@@ -94,7 +94,7 @@
     </plugin>
   </gazebo>
   <!-- ============================   Wheel   ============================ -->
-  <!-- Front Wheel Joint -->
+  <!-- Wheel Joint -->
   <joint name="base_to_right_front_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="right_front_wheel"/>
@@ -105,12 +105,12 @@
   <link name="right_front_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_right_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel_left.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
@@ -118,24 +118,22 @@
       <inertia ixx="0.00000575118" ixy="-0.00000000224" ixz="0.0" iyy="0.00000575882" iyz="0.0" izz="0.0000094354"/>
     </inertial>
   </link>
-  <!-- Back Wheel Joint -->
   <joint name="base_to_right_back_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="right_back_wheel"/>
-    <origin rpy="0 0 0" xyz="-0.05848 0.12005 -0.02016"/>
+    <origin rpy="0 0 0" xyz="0.05848 0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
-  <!-- Back Wheel Link -->
+  <!-- Front Wheel Link -->
   <link name="right_back_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_right_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel_left.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
@@ -144,18 +142,18 @@
     </inertial>
   </link>
   <!-- ============================   Wheel   ============================ -->
-  <!-- Front Wheel Joint -->
+  <!-- Wheel Joint -->
   <joint name="base_to_left_front_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="left_front_wheel"/>
-    <origin rpy="0 0 0" xyz="0.05605 -0.12005 -0.02016"/>
+    <origin rpy="0 0 0" xyz="0.05605 0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
   <!-- Front Wheel Link -->
   <link name="left_front_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_left_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -168,20 +166,18 @@
       <inertia ixx="0.00000575118" ixy="-0.00000000224" ixz="0.0" iyy="0.00000575882" iyz="0.0" izz="0.0000094354"/>
     </inertial>
   </link>
-  <!-- Back Wheel Joint -->
   <joint name="base_to_left_back_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="left_back_wheel"/>
-    <origin rpy="0 0 0" xyz="-0.05848 -0.12005 -0.02016"/>
+    <origin rpy="0 0 0" xyz="0.05848 0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
-  <!-- Back Wheel Link -->
+  <!-- Front Wheel Link -->
   <link name="left_back_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/base/wheel_viz.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/base/wheel_left_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -503,7 +499,7 @@
   <link name="right_finger1">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/finger_viz.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/finger_left_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -530,7 +526,7 @@
   <link name="right_finger2">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/finger_viz.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/finger_left_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
