@@ -98,10 +98,10 @@
   <joint name="base_to_right_front_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="right_front_wheel"/>
-    <origin rpy="0 0 0" xyz="0.05605 0.12005 -0.02016"/>
+    <origin rpy="0 0 0.0" xyz="0.05605 -0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
-  <!-- Front Wheel Link -->
+  <!-- Wheel Link -->
   <link name="right_front_wheel">
     <visual>
       <geometry>
@@ -118,13 +118,15 @@
       <inertia ixx="0.00000575118" ixy="-0.00000000224" ixz="0.0" iyy="0.00000575882" iyz="0.0" izz="0.0000094354"/>
     </inertial>
   </link>
+  <!-- ============================   Wheel   ============================ -->
+  <!-- Wheel Joint -->
   <joint name="base_to_right_back_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="right_back_wheel"/>
-    <origin rpy="0 0 0" xyz="0.05848 0.12005 -0.02016"/>
+    <origin rpy="0 0 0.0" xyz="-0.05848 -0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
-  <!-- Front Wheel Link -->
+  <!-- Wheel Link -->
   <link name="right_back_wheel">
     <visual>
       <geometry>
@@ -146,10 +148,10 @@
   <joint name="base_to_left_front_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="left_front_wheel"/>
-    <origin rpy="0 0 0" xyz="0.05605 0.12005 -0.02016"/>
+    <origin rpy="0 0 0.0" xyz="0.05605 0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
-  <!-- Front Wheel Link -->
+  <!-- Wheel Link -->
   <link name="left_front_wheel">
     <visual>
       <geometry>
@@ -166,13 +168,15 @@
       <inertia ixx="0.00000575118" ixy="-0.00000000224" ixz="0.0" iyy="0.00000575882" iyz="0.0" izz="0.0000094354"/>
     </inertial>
   </link>
+  <!-- ============================   Wheel   ============================ -->
+  <!-- Wheel Joint -->
   <joint name="base_to_left_back_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="left_back_wheel"/>
-    <origin rpy="0 0 0" xyz="0.05848 0.12005 -0.02016"/>
+    <origin rpy="0 0 0.0" xyz="-0.05848 0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
-  <!-- Front Wheel Link -->
+  <!-- Wheel Link -->
   <link name="left_back_wheel">
     <visual>
       <geometry>
