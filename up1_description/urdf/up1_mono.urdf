@@ -283,7 +283,7 @@
       <inertia ixx="0.00000029098" ixy="0.0" ixz="0.0" iyy="0.00000085538" iyz="0.0" izz="0.00000085538"/>
     </inertial>
   </link>
-  <!-- ============================   Dual Arm Module   ============================ -->
+  <!-- ============================   Mono Arm Module   ============================ -->
   <!-- This xacro group is intended to be used in a full UP1 robot URDF -->
   <!-- Armroot Joint -->
   <joint name="base_to_armroot" type="fixed">
@@ -504,11 +504,11 @@
     </actuator>
   </transmission>
   <!-- ============================   Gripper   ============================ -->
-  <!-- Finger Joint 1 -->
+  <!-- Finger Joint -->
   <joint name="right_finger_joint" type="prismatic">
     <parent link="right_gripper"/>
     <child link="right_finger1"/>
-    <origin rpy="0 0 0" xyz="-0.0 0.0 0.07961"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.07961"/>
     <axis xyz="0 1 0"/>
     <limit effort="6.0" lower="0" upper="0.018" velocity="1"/>
   </joint>
@@ -516,13 +516,13 @@
   <link name="right_finger1">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/finger_left_viz.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/finger_1_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/finger_left.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/finger_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
@@ -530,26 +530,52 @@
       <inertia ixx="0.00000285949" ixy="-0.00000001641" ixz="0.00000001803" iyy="0.00000203198" iyz="-0.00000077289" izz="0.00000299021"/>
     </inertial>
   </link>
-  <!-- Finger Joint 2 -->
+  <!-- ============================   Gripper Gazebo   ============================ -->
+  <gazebo reference="right_finger1">
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="right_finger2">
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <!-- ============================   Gripper Transmission   ============================ -->
+  <transmission name="right_gripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_finger_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_gripper_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_gripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_finger_joint_fake">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_gripper_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ============================   Gripper   ============================ -->
+  <!-- Finger Joint -->
   <joint name="right_finger_joint_fake" type="prismatic">
     <parent link="right_gripper"/>
     <child link="right_finger2"/>
-    <origin rpy="0 0 3.14159" xyz="0.0 0.0 0.07961"/>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 0.07961"/>
     <axis xyz="0 1 0"/>
     <limit effort="6.0" lower="0" upper="0.018" velocity="1"/>
-    <mimic joint="right_finger_joint" multiplier="1" offset="0"/>
   </joint>
-  <!-- Finger Link 2 -->
+  <!-- Finger Link 1 -->
   <link name="right_finger2">
     <visual>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/finger_left_viz.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/finger_2_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://up1_description/meshes/mono_arm/finger_left.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://up1_description/meshes/mono_arm/finger_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>

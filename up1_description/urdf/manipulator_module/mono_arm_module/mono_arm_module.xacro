@@ -6,7 +6,7 @@
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/mono_arm_module/gripper.xacro" />
 
   <xacro:macro name="manipulator_module">
-    <!-- ============================   Dual Arm Module   ============================ -->
+    <!-- ============================   Mono Arm Module   ============================ -->
     <!-- This xacro group is intended to be used in a full UP1 robot URDF -->
 
     <!-- Armroot Joint -->
@@ -20,7 +20,8 @@
 
     <xacro:arm prefix="right" reflect="1" />
 
-    <xacro:gripper prefix="right" reflect="1" />
+    <xacro:gripper prefix="right" num="1" reflect="-1" flip="0" fake="" />
+    <xacro:gripper prefix="right" num="2" reflect="1" flip="1" fake="_fake" />
 
   </xacro:macro>
 

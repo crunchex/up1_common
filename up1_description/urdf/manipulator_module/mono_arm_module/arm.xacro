@@ -34,23 +34,18 @@
   <xacro:property name="armlink4_limit_upper" value="${pi/2}" />
   <xacro:property name="gripper_limit_lower" value="${-pi/2}" />
   <xacro:property name="gripper_limit_upper" value="${pi/2}" />
-  <xacro:property name="finger_limit_upper" value="0.018" />
 
   <xacro:property name="armlink1_velocity" value="5.236" />
   <xacro:property name="armlink2_velocity" value="4.553" />
   <xacro:property name="armlink3_velocity" value="5.236" />
   <xacro:property name="armlink4_velocity" value="5.236" />
   <xacro:property name="gripper_velocity" value="5.236" />
-  <xacro:property name="finger1_velocity" value="1" />
-  <xacro:property name="finger2_velocity" value="1" />
 
   <xacro:property name="armlink1_effort" value="6.0" />
   <xacro:property name="armlink2_effort" value="6.0" />
   <xacro:property name="armlink3_effort" value="6.0" />
   <xacro:property name="armlink4_effort" value="6.0" />
   <xacro:property name="gripper_effort" value="6.0" />
-  <xacro:property name="finger1_effort" value="6.0" />
-  <xacro:property name="finger2_effort" value="6.0" />
 
   <xacro:macro name="arm" params="prefix reflect">
     <!-- ============================   Arm   ============================ -->

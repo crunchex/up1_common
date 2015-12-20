@@ -8,59 +8,33 @@
   <xacro:property name="finger_offset_y" value="0.0" />
   <xacro:property name="finger_offset_z" value="0.07961" />
 
-  <xacro:macro name="gripper" params="prefix reflect">
+  <xacro:property name="finger_limit_upper" value="0.018" />
+  <xacro:property name="finger_velocity" value="1" />
+  <xacro:property name="finger_effort" value="6.0" />
+
+  <xacro:macro name="gripper" params="prefix num reflect flip fake">
     <!-- ============================   Gripper   ============================ -->
 
-    <!-- Finger Joint 1 -->
-    <joint name="${prefix}_finger_joint" type="prismatic">
+    <!-- Finger Joint -->
+    <joint name="${prefix}_finger_joint${fake}" type="prismatic">
       <parent link="${prefix}_gripper" />
-      <child link="${prefix}_finger1" />
+      <child link="${prefix}_finger${num}" />
       <origin rpy="0 0 0"
-        xyz="${-finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
+        xyz="${-1*reflect*finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
       <axis xyz="0 1 0" />
-      <limit lower="0" upper="${finger_limit_upper}" velocity="${finger1_velocity}" effort="${finger1_effort}" />
+      <limit lower="0" upper="${finger_limit_upper}" velocity="${finger_velocity}" effort="${finger_effort}" />
     </joint>
     <!-- Finger Link 1 -->
-    <link name="${prefix}_finger1">
+    <link name="${prefix}_finger${num}">
       <visual>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/finger_left_viz.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/finger_${num}_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="light grey" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/finger_left.stl" scale="0.001 0.001 0.001" />
-        </geometry>
-      </collision>
-      <inertial>
-        <mass value="0.01174"/>
-        <inertia ixx="0.00000285949" ixy="-0.00000001641" ixz="0.00000001803"
-                 iyy="0.00000203198" iyz="-0.00000077289" izz="0.00000299021"/>
-      </inertial>
-    </link>
-
-    <!-- Finger Joint 2 -->
-    <joint name="${prefix}_finger_joint_fake" type="prismatic">
-      <parent link="${prefix}_gripper" />
-      <child link="${prefix}_finger2" />
-      <origin rpy="0 0 ${pi}"
-        xyz="${finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
-      <axis xyz="0 1 0" />
-      <limit lower="0" upper="${finger_limit_upper}" velocity="${finger2_velocity}" effort="${finger2_effort}" />
-      <mimic joint="${prefix}_finger_joint" multiplier="1" offset="0"/>
-    </joint>
-    <!-- Finger Link 2 -->
-    <link name="${prefix}_finger2">
-      <visual>
-        <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/finger_left_viz.dae" scale="0.001 0.001 0.001" />
-        </geometry>
-        <material name="light grey" />
-      </visual>
-      <collision>
-        <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/finger_left.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/finger_${num}.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
