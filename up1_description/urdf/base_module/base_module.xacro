@@ -36,6 +36,7 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/base/base_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
+        <material name="dark grey" />
       </visual>
       <collision>
         <geometry>

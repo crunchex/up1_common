@@ -14,8 +14,14 @@
   <material name="red">
     <color rgba="1 0 0 1" />
   </material>
+  <material name="dark grey">
+    <color rgba=".2 .2 .2 1" />
+  </material>
   <material name="grey">
-    <color rgba=".5 .5 .5 1" />
+    <color rgba=".4 .4 .4 1" />
+  </material>
+  <material name="light grey">
+    <color rgba=".7 .7 .7 1" />
   </material>
   <material name="green">
     <color rgba="0 1 0 1" />

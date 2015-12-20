@@ -70,7 +70,7 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink1_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
@@ -99,7 +99,7 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink2_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
@@ -128,7 +128,7 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink3_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
@@ -157,7 +157,7 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink4_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
@@ -186,7 +186,7 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink5_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>

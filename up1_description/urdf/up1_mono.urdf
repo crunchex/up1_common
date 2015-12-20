@@ -18,8 +18,14 @@
   <material name="red">
     <color rgba="1 0 0 1"/>
   </material>
+  <material name="dark grey">
+    <color rgba=".2 .2 .2 1"/>
+  </material>
   <material name="grey">
-    <color rgba=".5 .5 .5 1"/>
+    <color rgba=".4 .4 .4 1"/>
+  </material>
+  <material name="light grey">
+    <color rgba=".7 .7 .7 1"/>
   </material>
   <material name="green">
     <color rgba="0 1 0 1"/>
@@ -65,6 +71,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/base/base_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="dark grey"/>
     </visual>
     <collision>
       <geometry>
@@ -98,7 +105,7 @@
   <joint name="base_to_right_front_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="right_front_wheel"/>
-    <origin rpy="0 0 0.0" xyz="0.05605 -0.12005 -0.02016"/>
+    <origin rpy="0 0 0" xyz="0.05605 -0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
   <!-- Wheel Link -->
@@ -107,6 +114,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/base/wheel_right_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -123,7 +131,7 @@
   <joint name="base_to_right_back_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="right_back_wheel"/>
-    <origin rpy="0 0 0.0" xyz="-0.05848 -0.12005 -0.02016"/>
+    <origin rpy="0 0 0" xyz="-0.05848 -0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
   <!-- Wheel Link -->
@@ -132,6 +140,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/base/wheel_right_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -148,7 +157,7 @@
   <joint name="base_to_left_front_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="left_front_wheel"/>
-    <origin rpy="0 0 0.0" xyz="0.05605 0.12005 -0.02016"/>
+    <origin rpy="0 0 0" xyz="0.05605 0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
   <!-- Wheel Link -->
@@ -157,6 +166,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/base/wheel_left_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -173,7 +183,7 @@
   <joint name="base_to_left_back_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="left_back_wheel"/>
-    <origin rpy="0 0 0.0" xyz="-0.05848 0.12005 -0.02016"/>
+    <origin rpy="0 0 0" xyz="-0.05848 0.12005 -0.02016"/>
     <axis xyz="0 1 0"/>
   </joint>
   <!-- Wheel Link -->
@@ -182,6 +192,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/base/wheel_left_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -235,6 +246,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/io/camera_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -259,6 +271,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/io/camera_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
     <collision>
       <geometry>
@@ -285,7 +298,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/mono_arm/armroot_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey"/>
+      <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
@@ -312,7 +325,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/mono_arm/armlink1_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="white"/>
+      <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
@@ -338,7 +351,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/mono_arm/armlink2_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="white"/>
+      <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
@@ -364,7 +377,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/mono_arm/armlink3_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="white"/>
+      <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
@@ -390,7 +403,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/mono_arm/armlink4_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="white"/>
+      <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
@@ -416,7 +429,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/mono_arm/armlink5_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="white"/>
+      <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
@@ -505,7 +518,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/mono_arm/finger_left_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey"/>
+      <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
@@ -532,7 +545,7 @@
       <geometry>
         <mesh filename="package://up1_description/meshes/mono_arm/finger_left_viz.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey"/>
+      <material name="light grey"/>
     </visual>
     <collision>
       <geometry>
