@@ -11,7 +11,7 @@
     <joint name="base_to_${prefix}_${end}_wheel" type="continuous">
       <parent link="base_link" />
       <child link="${prefix}_${end}_wheel" />
-      <origin rpy="0 0 0" xyz="${wheel_offset_x} ${-1*reflect*wheel_offset_y} -${wheel_offset_z}" />
+      <origin rpy="0 0 0" xyz="${wheel_offset_x} ${reflect*wheel_offset_y} -${wheel_offset_z}" />
       <axis xyz="0 1 0" />
     </joint>
     <!-- Wheel Link -->

@@ -20,7 +20,7 @@
       <parent link="${prefix}_gripper" />
       <child link="${prefix}_finger${num}" />
       <origin rpy="0 0 0"
-        xyz="${-1*reflect*finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
+        xyz="${reflect*finger_offset_x} ${finger_offset_y} ${finger_offset_z}" />
       <axis xyz="0 1 0" />
       <limit lower="0" upper="${finger_limit_upper}" velocity="${finger_velocity}" effort="${finger_effort}" />
     </joint>

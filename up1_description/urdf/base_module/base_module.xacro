@@ -52,10 +52,10 @@
 
     <xacro:base_module_gazebo />
 
-    <xacro:wheel prefix="right" end="front" reflect="1" wheel_offset_x="0.05605" />
-    <xacro:wheel prefix="right" end="back" reflect="1" wheel_offset_x="-0.05848" />
-    <xacro:wheel prefix="left" end="front" reflect="-1" wheel_offset_x="0.05605" />
-    <xacro:wheel prefix="left" end="back" reflect="-1" wheel_offset_x="-0.05848" />
+    <xacro:wheel prefix="right" end="front" reflect="-1" wheel_offset_x="0.05605" />
+    <xacro:wheel prefix="right" end="back" reflect="-1" wheel_offset_x="-0.05848" />
+    <xacro:wheel prefix="left" end="front" reflect="1" wheel_offset_x="0.05605" />
+    <xacro:wheel prefix="left" end="back" reflect="1" wheel_offset_x="-0.05848" />
 
   </xacro:macro>
 

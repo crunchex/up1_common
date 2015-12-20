@@ -13,8 +13,8 @@
 
     <xacro:arm prefix="right" reflect="1" />
 
-    <xacro:finger prefix="right" num="1" reflect="-1" flip="0" fake="" />
-    <xacro:finger prefix="right" num="2" reflect="1" flip="1" fake="_fake" />
+    <xacro:finger prefix="right" num="1" reflect="1" flip="0" fake="" />
+    <xacro:finger prefix="right" num="2" reflect="-1" flip="1" fake="_fake" />
 
   </xacro:macro>
 

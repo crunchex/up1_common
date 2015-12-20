@@ -3,7 +3,7 @@
 
   <xacro:property name="camera_offset_y" value="0.02150" />
   <xacro:property name="camera_offset_z" value="0.00476" />
-  <xacro:property name="camera_offset_x" value="-0.00751" />
+  <xacro:property name="camera_offset_x" value="0.00751" />
 
   <xacro:macro name="camera" params="prefix reflect">
     <!-- ============================   Camera   ============================ -->
@@ -12,7 +12,7 @@
     <joint name="io_to_${prefix}_camera" type="fixed">
       <parent link="io_link" />
       <child link="${prefix}_camera" />
-      <origin xyz="${camera_offset_x} ${reflect*camera_offset_y} ${camera_offset_z}" rpy="0 ${pi/15} 0"/>
+      <origin xyz="-${camera_offset_x} ${reflect*camera_offset_y} ${camera_offset_z}" rpy="0 ${pi/15} 0"/>
     </joint>
     <!-- Camera Link -->
     <link name="${prefix}_camera">
