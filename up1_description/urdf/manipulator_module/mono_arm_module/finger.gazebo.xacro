@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="up1">
 
-  <xacro:macro name="gripper_gazebo" params="prefix">
+  <xacro:macro name="finger_gazebo" params="prefix">
     <!-- ============================   Gripper Gazebo   ============================ -->
 
     <gazebo reference="${prefix}_finger1">

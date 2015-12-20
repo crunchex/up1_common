@@ -503,7 +503,7 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- ============================   Gripper   ============================ -->
+  <!-- ============================   Finger   ============================ -->
   <!-- Finger Joint -->
   <joint name="right_finger_joint" type="prismatic">
     <parent link="right_gripper"/>
@@ -537,26 +537,26 @@
   <gazebo reference="right_finger2">
     <turnGravityOff>true</turnGravityOff>
   </gazebo>
-  <!-- ============================   Gripper Transmission   ============================ -->
-  <transmission name="right_gripper_trans">
+  <!-- ============================   finger Transmission   ============================ -->
+  <transmission name="right_finger_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="right_finger_joint">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="right_gripper_motor">
+    <actuator name="right_finger_motor">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="right_gripper_trans">
+  <transmission name="right_finger_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="right_finger_joint_fake">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="right_gripper_motor">
+    <actuator name="right_finger_motor">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- ============================   Gripper   ============================ -->
+  <!-- ============================   Finger   ============================ -->
   <!-- Finger Joint -->
   <joint name="right_finger_joint_fake" type="prismatic">
     <parent link="right_gripper"/>
@@ -590,22 +590,22 @@
   <gazebo reference="right_finger2">
     <turnGravityOff>true</turnGravityOff>
   </gazebo>
-  <!-- ============================   Gripper Transmission   ============================ -->
-  <transmission name="right_gripper_trans">
+  <!-- ============================   finger Transmission   ============================ -->
+  <transmission name="right_finger_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="right_finger_joint">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="right_gripper_motor">
+    <actuator name="right_finger_motor">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="right_gripper_trans">
+  <transmission name="right_finger_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="right_finger_joint_fake">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="right_gripper_motor">
+    <actuator name="right_finger_motor">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
