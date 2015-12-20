@@ -42,9 +42,8 @@
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
     </plugin>
   </gazebo>
-  <!-- ============================   Base Module   ============================ -->
-  <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link origin,
-         navigation stack dedpends on this frame -->
+  <!-- up1_footprint is a fictitious link(frame) that is on the ground right below base_link origin,
+       navigation stack dedpends on this frame -->
   <link name="up1_footprint">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -60,12 +59,13 @@
       </geometry>
     </collision>
   </link>
+  <!-- ============================   Base Module   ============================ -->
+  <!-- Base Link -->
   <joint name="up1_footprint_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.06015"/>
     <child link="base_link"/>
     <parent link="up1_footprint"/>
   </joint>
-  <!-- Base Link -->
   <link name="base_link">
     <visual>
       <geometry>

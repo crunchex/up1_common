@@ -4,33 +4,17 @@
   <xacro:include filename="$(find up1_description)/urdf/base_module/wheel.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/base_module/base_module.gazebo.xacro" />
 
+  <xacro:property name="wheel_radius" value="0.03999" />
+
   <xacro:macro name="base_module">
     <!-- ============================   Base Module   ============================ -->
 
-    <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link origin,
-         navigation stack dedpends on this frame -->
-    <link name="up1_footprint">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <box size="0.01 0.01 0.01" />
-        </geometry>
-        <material name="white" />
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <box size="0.001 0.001 0.001" />
-        </geometry>
-      </collision>
-    </link>
+    <!-- Base Link -->
     <joint name="up1_footprint_joint" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 ${wheel_radius + wheel_offset_z}" rpy="0 0 0" />
       <child link="base_link" />
       <parent link="up1_footprint"/>
     </joint>
-
-    <!-- Base Link -->
     <link name="base_link">
       <visual>
         <geometry>
