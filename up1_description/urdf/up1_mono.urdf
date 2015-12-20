@@ -285,13 +285,13 @@
   </link>
   <!-- ============================   Mono Arm Module   ============================ -->
   <!-- This xacro group is intended to be used in a full UP1 robot URDF -->
+  <!-- ============================   Arm Root  ============================ -->
   <!-- Armroot Joint -->
   <joint name="base_to_armroot" type="fixed">
     <parent link="base_link"/>
     <child link="armroot_link"/>
     <origin xyz="0.00556 0.0 0.05058"/>
   </joint>
-  <!-- ============================   Arm Root Link   ============================ -->
   <!-- Armroot Link -->
   <link name="armroot_link">
     <visual>
