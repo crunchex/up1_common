@@ -7,9 +7,9 @@
   <xacro:arg name="io_module" default="io" /> -->
 
   <xacro:include filename="$(find up1_description)/urdf/common.xacro" />
-  <xacro:include filename="$(find up1_description)/urdf/base_module/$(arg base_module)_module.xacro" />
-  <xacro:include filename="$(find up1_description)/urdf/io_module/$(arg io_module)_module.xacro" />
-  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/$(arg manipulator_module)_module/$(arg manipulator_module)_module.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/base_module/base_module.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/io_module/io_module.xacro" />
+  <xacro:include filename="$(find up1_description)/urdf/manipulator_module/mono_arm_module/mono_arm_module.xacro" />
 
   <!-- up1_footprint is a fictitious link(frame) that is on the ground right below base_link origin,
        navigation stack dedpends on this frame -->
