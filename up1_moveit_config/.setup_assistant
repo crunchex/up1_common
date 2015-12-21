@@ -1,8 +1,0 @@
-moveit_setup_assistant_config:
-  URDF:
-    package: up1_description
-    relative_path: urdf/up1.urdf
-  SRDF:
-    relative_path: config/up1.srdf
-  CONFIG:
-    generated_timestamp: 1443497815
