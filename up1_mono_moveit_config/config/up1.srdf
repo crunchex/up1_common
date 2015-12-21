@@ -35,7 +35,6 @@
     <disable_collisions link1="armroot_link" link2="right_armlink1" reason="Adjacent" />
     <disable_collisions link1="armroot_link" link2="right_armlink2" reason="Never" />
     <disable_collisions link1="armroot_link" link2="right_armlink3" reason="Never" />
-    <disable_collisions link1="armroot_link" link2="right_armlink4" reason="Never" />
     <disable_collisions link1="armroot_link" link2="right_back_wheel" reason="Never" />
     <disable_collisions link1="armroot_link" link2="right_camera" reason="Never" />
     <disable_collisions link1="armroot_link" link2="right_finger1" reason="Never" />
