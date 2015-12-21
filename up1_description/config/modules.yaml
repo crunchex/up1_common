@@ -2,16 +2,15 @@
 # It can be manually edited until there is a better mechanism for module discovery.
 
 # Currently supported modules:
-#   base_module:
+#   base:
 #     - base
-#   manipulator_module:
-#     - dual_arm
+#   manipulator:
 #     - mono_arm
-#   io_module:
+#   io:
 #     - io
 
 up1:
   modules:
-    base_module: base
-    manipulator_module: dual_arm
-    io_module: io
+    base: base
+    manipulator: mono_arm
+    io: io

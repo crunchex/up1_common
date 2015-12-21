@@ -11,6 +11,24 @@
   <xacro:include filename="$(find up1_description)/urdf/io_module/$(arg io_module)_module.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/$(arg manipulator_module)_module/$(arg manipulator_module)_module.xacro" />
 
+  <!-- up1_footprint is a fictitious link(frame) that is on the ground right below base_link origin,
+       navigation stack dedpends on this frame -->
+  <link name="up1_footprint">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+      <material name="white" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
   <xacro:base_module />
   <xacro:io_module />
   <xacro:manipulator_module />

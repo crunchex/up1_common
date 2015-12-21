@@ -5,22 +5,6 @@
 
   <xacro:property name="pi" value="3.14159" />
 
-  <xacro:property name="front_wheel_offset_x" value="0.05569" />
-  <xacro:property name="front_wheel_offset_y" value="0.12922" />
-  <xacro:property name="front_wheel_offset_z" value="-0.02110" />
-
-  <xacro:property name="back_wheel_offset_x" value="-0.05883" />
-  <xacro:property name="back_wheel_offset_y" value="0.12922" />
-  <xacro:property name="back_wheel_offset_z" value="-0.02110" />
-
-  <xacro:property name="io_offset_x" value="0.09136" />
-  <xacro:property name="io_offset_y" value="0" />
-  <xacro:property name="io_offset_z" value="0.03356" />
-
-  <xacro:property name="camera_offset_x" value="-0.00519" />
-  <xacro:property name="camera_offset_y" value="0.02127" />
-  <xacro:property name="camera_offset_z" value="0.00451" />
-
   <material name="black">
     <color rgba="0 0 0 1" />
   </material>
@@ -30,8 +14,14 @@
   <material name="red">
     <color rgba="1 0 0 1" />
   </material>
+  <material name="dark grey">
+    <color rgba=".2 .2 .2 1" />
+  </material>
   <material name="grey">
-    <color rgba=".5 .5 .5 1" />
+    <color rgba=".4 .4 .4 1" />
+  </material>
+  <material name="light grey">
+    <color rgba=".7 .7 .7 1" />
   </material>
   <material name="green">
     <color rgba="0 1 0 1" />

@@ -4,25 +4,25 @@
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/mono_arm_module/arm.gazebo.xacro" />
   <xacro:include filename="$(find up1_description)/urdf/manipulator_module/mono_arm_module/arm.transmission.xacro" />
 
-  <xacro:property name="armlink1_offset_x" value="0.01398" />
-  <xacro:property name="armlink1_offset_y" value="0" />
-  <xacro:property name="armlink1_offset_z" value="0.0402" />
+  <xacro:property name="armlink1_offset_x" value="0.0" />
+  <xacro:property name="armlink1_offset_y" value="0.0" />
+  <xacro:property name="armlink1_offset_z" value="0.03099" />
 
-  <xacro:property name="armlink2_offset_x" value="0" />
-  <xacro:property name="armlink2_offset_y" value="0" />
-  <xacro:property name="armlink2_offset_z" value="-0.0553" />
+  <xacro:property name="armlink2_offset_x" value="0.0" />
+  <xacro:property name="armlink2_offset_y" value="0.0" />
+  <xacro:property name="armlink2_offset_z" value="0.05527" />
 
-  <xacro:property name="armlink3_offset_x" value="0" />
-  <xacro:property name="armlink3_offset_y" value="0.10602" />
-  <xacro:property name="armlink3_offset_z" value="0" />
+  <xacro:property name="armlink3_offset_x" value="0.0" />
+  <xacro:property name="armlink3_offset_y" value="0.0" />
+  <xacro:property name="armlink3_offset_z" value="0.10602" />
 
-  <xacro:property name="armlink4_offset_x" value="0" />
-  <xacro:property name="armlink4_offset_y" value="0" />
+  <xacro:property name="armlink4_offset_x" value="0.0" />
+  <xacro:property name="armlink4_offset_y" value="0.0" />
   <xacro:property name="armlink4_offset_z" value="0.05588" />
 
-  <xacro:property name="gripper_offset_x" value="0" />
-  <xacro:property name="gripper_offset_y" value="0.07641" />
-  <xacro:property name="gripper_offset_z" value="0" />
+  <xacro:property name="gripper_offset_x" value="0.0" />
+  <xacro:property name="gripper_offset_y" value="0.0" />
+  <xacro:property name="gripper_offset_z" value="0.08471" />
 
   <xacro:property name="armlink1_limit_lower" value="${-pi/2}" />
   <xacro:property name="armlink1_limit_upper" value="${pi/2}" />
@@ -34,23 +34,18 @@
   <xacro:property name="armlink4_limit_upper" value="${pi/2}" />
   <xacro:property name="gripper_limit_lower" value="${-pi/2}" />
   <xacro:property name="gripper_limit_upper" value="${pi/2}" />
-  <xacro:property name="finger_limit_upper" value="0.018" />
 
   <xacro:property name="armlink1_velocity" value="5.236" />
   <xacro:property name="armlink2_velocity" value="4.553" />
   <xacro:property name="armlink3_velocity" value="5.236" />
   <xacro:property name="armlink4_velocity" value="5.236" />
   <xacro:property name="gripper_velocity" value="5.236" />
-  <xacro:property name="finger1_velocity" value="1" />
-  <xacro:property name="finger2_velocity" value="1" />
 
   <xacro:property name="armlink1_effort" value="6.0" />
   <xacro:property name="armlink2_effort" value="6.0" />
   <xacro:property name="armlink3_effort" value="6.0" />
   <xacro:property name="armlink4_effort" value="6.0" />
   <xacro:property name="gripper_effort" value="6.0" />
-  <xacro:property name="finger1_effort" value="6.0" />
-  <xacro:property name="finger2_effort" value="6.0" />
 
   <xacro:macro name="arm" params="prefix reflect">
     <!-- ============================   Arm   ============================ -->
@@ -59,8 +54,8 @@
     <joint name="${prefix}_armroot_to_armlink1" type="revolute">
       <parent link="armroot_link" />
       <child link="${prefix}_armlink1" />
-      <origin rpy="0 ${pi} 0"
-        xyz="${armlink1_offset_x} ${-reflect*armlink1_offset_y} ${armlink1_offset_z}" />
+      <origin rpy="0 0 0"
+        xyz="${armlink1_offset_x} ${armlink1_offset_y} ${armlink1_offset_z}" />
       <axis xyz="0 0 1" />
       <limit lower="${armlink1_limit_lower}" upper="${armlink1_limit_upper}" velocity="${armlink1_velocity}" effort="${armlink1_effort}" />
     </joint>
@@ -70,11 +65,11 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink1_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink1.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink1.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -88,9 +83,9 @@
     <joint name="${prefix}_armlink1_to_armlink2" type="revolute">
       <parent link="${prefix}_armlink1" />
       <child link="${prefix}_armlink2" />
-      <origin rpy="${pi/2} ${pi} 0"
+      <origin rpy="0 0 0"
         xyz="${armlink2_offset_x} ${armlink2_offset_y} ${armlink2_offset_z}" />
-      <axis xyz="0 0 ${reflect*1}" />
+      <axis xyz="0 1 0" />
       <limit lower="${armlink2_limit_lower}" upper="${armlink2_limit_upper}" velocity="${armlink2_velocity}" effort="${armlink2_effort}" />
     </joint>
     <!-- Arm Link 2 -->
@@ -99,11 +94,11 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink2_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink2.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink2.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -117,9 +112,9 @@
     <joint name="${prefix}_armlink2_to_armlink3" type="revolute">
       <parent link="${prefix}_armlink2" />
       <child link="${prefix}_armlink3" />
-      <origin rpy="${-pi/2} ${pi} 0"
+      <origin rpy="0 0 0"
         xyz="${armlink3_offset_x} ${armlink3_offset_y} ${armlink3_offset_z}" />
-      <axis xyz="0 0 -1" />
+      <axis xyz="0 0 1" />
       <limit lower="${armlink3_limit_lower}" upper="${armlink3_limit_upper}" velocity="${armlink3_velocity}" effort="${armlink3_effort}" />
     </joint>
     <!-- Arm Link 3 -->
@@ -128,11 +123,11 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink3_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink3.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink3.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -146,9 +141,9 @@
     <joint name="${prefix}_armlink3_to_armlink4" type="revolute">
       <parent link="${prefix}_armlink3" />
       <child link="${prefix}_armlink4" />
-      <origin rpy="${pi/2} 0 0"
+      <origin rpy="0 0 0"
         xyz="${armlink4_offset_x} ${armlink4_offset_y} ${armlink4_offset_z}" />
-      <axis xyz="0 0 ${reflect*1}" />
+      <axis xyz="0 1 0" />
       <limit lower="${armlink4_limit_lower}" upper="${armlink4_limit_upper}" velocity="${armlink4_velocity}" effort="${armlink4_effort}" />
     </joint>
     <!-- Arm Link 4 -->
@@ -157,11 +152,11 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink4_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink4.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink4.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
@@ -175,9 +170,9 @@
     <joint name="${prefix}_armlink4_to_gripper" type="revolute">
       <parent link="${prefix}_armlink4" />
       <child link="${prefix}_gripper" />
-      <origin rpy="0 ${pi/2} 0"
+      <origin rpy="0 0 0"
         xyz="${gripper_offset_x} ${gripper_offset_y} ${gripper_offset_z}" />
-      <axis xyz="0 0 ${-reflect*1}" />
+      <axis xyz="1 0 0" />
       <limit lower="${gripper_limit_lower}" upper="${gripper_limit_upper}" velocity="${gripper_velocity}" effort="${gripper_effort}" />
     </joint>
     <!-- Gripper Link -->
@@ -186,11 +181,11 @@
         <geometry>
           <mesh filename="package://up1_description/meshes/mono_arm/armlink5_viz.dae" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="white" />
+        <material name="light grey" />
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://up1_description/meshes/mono_arm/armlink5.dae" scale="0.001 0.001 0.001" />
+          <mesh filename="package://up1_description/meshes/mono_arm/armlink5.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
       <inertial>
