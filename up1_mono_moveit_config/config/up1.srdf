@@ -17,6 +17,56 @@
         <link name="right_finger1" />
         <link name="right_finger2" />
     </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="centered" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="0" />
+        <joint name="right_armlink2_to_armlink3" value="0" />
+        <joint name="right_armlink3_to_armlink4" value="0" />
+        <joint name="right_armlink4_to_gripper" value="0" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="armroot_to_armlink1_45" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="0" />
+        <joint name="right_armlink2_to_armlink3" value="0" />
+        <joint name="right_armlink3_to_armlink4" value="0" />
+        <joint name="right_armlink4_to_gripper" value="0" />
+        <joint name="right_armroot_to_armlink1" value="0.78535" />
+    </group_state>
+    <group_state name="armlink1_to_armlink2_45" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="0.7853" />
+        <joint name="right_armlink2_to_armlink3" value="0" />
+        <joint name="right_armlink3_to_armlink4" value="0" />
+        <joint name="right_armlink4_to_gripper" value="0" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="armlink2_to_armlink3_45" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="0" />
+        <joint name="right_armlink2_to_armlink3" value="0.78535" />
+        <joint name="right_armlink3_to_armlink4" value="0" />
+        <joint name="right_armlink4_to_gripper" value="0" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="armlink3_to_armlink4_45" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="0" />
+        <joint name="right_armlink2_to_armlink3" value="0" />
+        <joint name="right_armlink3_to_armlink4" value="0.78535" />
+        <joint name="right_armlink4_to_gripper" value="0" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="armlink4_to_gripper_45" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="0" />
+        <joint name="right_armlink2_to_armlink3" value="0" />
+        <joint name="right_armlink3_to_armlink4" value="0" />
+        <joint name="right_armlink4_to_gripper" value="0.78535" />
+        <joint name="right_armroot_to_armlink1" value="0" />
+    </group_state>
+    <group_state name="all_45" group="right_arm">
+        <joint name="right_armlink1_to_armlink2" value="0.78535" />
+        <joint name="right_armlink2_to_armlink3" value="0.7853" />
+        <joint name="right_armlink3_to_armlink4" value="0.7853" />
+        <joint name="right_armlink4_to_gripper" value="0.7853" />
+        <joint name="right_armroot_to_armlink1" value="0.78535" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="right_eef" parent_link="right_gripper" group="right_gripper" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
