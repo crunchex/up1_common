@@ -315,8 +315,8 @@
   <joint name="right_armroot_to_armlink1" type="revolute">
     <parent link="armroot_link"/>
     <child link="right_armlink1"/>
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.03099"/>
-    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 3.14159" xyz="0.0 0.0 0.03099"/>
+    <axis xyz="0 0 -1"/>
     <limit effort="6.0" lower="-1.570795" upper="1.570795" velocity="5.236"/>
   </joint>
   <!-- Arm Link 1 -->
@@ -368,7 +368,7 @@
     <parent link="right_armlink2"/>
     <child link="right_armlink3"/>
     <origin rpy="0 0 0" xyz="0.0 0.0 0.10602"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 0 -1"/>
     <limit effort="6.0" lower="-1.570795" upper="1.570795" velocity="5.236"/>
   </joint>
   <!-- Arm Link 3 -->
@@ -394,7 +394,7 @@
     <parent link="right_armlink3"/>
     <child link="right_armlink4"/>
     <origin rpy="0 0 0" xyz="0.0 0.0 0.05588"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="6.0" lower="-1.570795" upper="1.570795" velocity="5.236"/>
   </joint>
   <!-- Arm Link 4 -->
@@ -419,8 +419,8 @@
   <joint name="right_armlink4_to_gripper" type="revolute">
     <parent link="right_armlink4"/>
     <child link="right_gripper"/>
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.08471"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 1.570795" xyz="0.0 0.0 0.08471"/>
+    <axis xyz="0 1 0"/>
     <limit effort="6.0" lower="-1.570795" upper="1.570795" velocity="5.236"/>
   </joint>
   <!-- Gripper Link -->
