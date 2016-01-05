@@ -7,3 +7,4 @@ scale_angular: 0.4
 
 enable_button: 2  # Left trigger button
 enable_turbo_button: 5  # Right trigger button
+arm_random_button: 3 # Y button
