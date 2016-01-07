@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import sys
+import rospy
+import moveit_commander
+import moveit_msgs.msg
+
+class SetPose():
+    def __init__(self):
+        moveit_commander.roscpp_initialize(sys.argv)
+        rospy.init_node('up1_set_pose', anonymous=True)
+
+        group = moveit_commander.MoveGroupCommander("right_arm")
+
+        # display_trajectory_publisher = rospy.Publisher(
+        #         '/move_group/display_planned_path',
+        #         moveit_msgs.msg.DisplayTrajectory,
+        #         queue_size=10)
+
+        group.set_named_target(sys.argv[1])
+        plan = group.plan()
+        # rospy.sleep(5)
+        group.execute(plan)
+
+        moveit_commander.roscpp_shutdown()
+
+if __name__ == '__main__':
+    try:
+        set_pose = SetPose()
+    except rospy.ROSInterruptException:
+        pass
