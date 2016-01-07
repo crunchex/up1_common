@@ -43,14 +43,14 @@ class TeleopTwistJoy():
         twist = Twist()
 
         if joy_msg.buttons[self.enable_turbo_button]:
-            twist.linear.x = joy_msg.axes[self.axis_linear] * self.scale_linear_turbo
-            twist.angular.z = joy_msg.axes[self.axis_angular] * self.scale_angular
+            twist.angular.z = joy_msg.axes[self.axis_linear] * self.scale_linear_turbo
+            twist.linear.x = joy_msg.axes[self.axis_angular] * self.scale_angular
             self.cmd_vel_pub.publish(twist)
             self.sent_disable_msg = False
 
         elif joy_msg.buttons[self.enable_button]:
-            twist.linear.x = joy_msg.axes[self.axis_linear] * self.scale_linear
-            twist.angular.z = joy_msg.axes[self.axis_angular] * self.scale_angular
+            twist.angular.z = joy_msg.axes[self.axis_linear] * self.scale_linear
+            twist.linear.x = joy_msg.axes[self.axis_angular] * self.scale_angular
             self.cmd_vel_pub.publish(twist)
             self.sent_disable_msg = False
 
