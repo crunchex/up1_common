@@ -5,23 +5,23 @@
     <!-- ============================   Arm Gazebo  ============================ -->
 
     <gazebo reference="${prefix}_armlink1">
-      <turnGravityOff>true</turnGravityOff>
+      <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
     <gazebo reference="${prefix}_armlink2">
-      <turnGravityOff>true</turnGravityOff>
+      <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
     <gazebo reference="${prefix}_armlink3">
-      <turnGravityOff>true</turnGravityOff>
+      <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
     <gazebo reference="${prefix}_armlink4">
-      <turnGravityOff>true</turnGravityOff>
+      <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
     <gazebo reference="${prefix}_gripper">
-      <turnGravityOff>true</turnGravityOff>
+      <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
   </xacro:macro>

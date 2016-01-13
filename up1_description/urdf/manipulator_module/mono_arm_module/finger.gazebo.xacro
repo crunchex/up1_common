@@ -5,11 +5,11 @@
     <!-- ============================   Gripper Gazebo   ============================ -->
 
     <gazebo reference="${prefix}_finger1">
-      <turnGravityOff>true</turnGravityOff>
+      <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
     <gazebo reference="${prefix}_finger2">
-      <turnGravityOff>true</turnGravityOff>
+      <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
   </xacro:macro>
