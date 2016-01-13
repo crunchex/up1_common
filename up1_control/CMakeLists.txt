@@ -21,3 +21,8 @@ catkin_install_python(PROGRAMS
 install(DIRECTORY config launch scripts
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+add_executable(random src/random.cpp)
+target_link_libraries(random ${catkin_LIBRARIES})
