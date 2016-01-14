@@ -17,6 +17,9 @@
   <build_depend>roslaunch</build_depend>
   <build_depend>ros_control</build_depend>
   <build_depend>ros_controllers</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>moveit_ros_planning_interface</build_depend>
+  <build_depend>moveit_ros_robot_interaction</build_depend>
   <run_depend>ros_control</run_depend>
   <run_depend>ros_controllers</run_depend>
   <run_depend>diff_drive_controller</run_depend>
@@ -26,6 +29,9 @@
   <run_depend>rostopic</run_depend>
   <run_depend>controller_manager</run_depend>
   <run_depend>teleop_twist_joy</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>moveit_ros_planning_interface</run_depend>
+  <run_depend>moveit_ros_robot_interaction</run_depend>
 
   <export>
   </export>
